@@ -1,49 +1,46 @@
-const menus=[
+import { Link } from "react-router-dom";
 
-{icon:"📍",name:"Địa chỉ đỏ"},
+const menus = [
+  {
+    icon: "📍",
+    name: "Địa chỉ đỏ",
+    link: "/dia-chi",
+  },
+  {
+    icon: "🗺️",
+    name: "Bản đồ",
+    link: "/ban-do",
+  },
+  {
+    icon: "📷",
+    name: "Thư viện",
+    link: "/thu-vien",
+  },
+  {
+    icon: "🎥",
+    name: "Video",
+    link: "/video",
+  },
+];
 
-{icon:"🗺️",name:"Bản đồ"},
+function Menu() {
+  return (
+    <section className="menu">
+      {menus.map((item, index) => (
+        <Link
+          key={index}
+          to={item.link}
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <div className="card">
+            <div className="icon">{item.icon}</div>
 
-{icon:"📷",name:"Thư viện"},
-
-{icon:"🎥",name:"Video"}
-
-]
-
-function Menu(){
-
-return(
-
-<section className="menu">
-
-{
-
-menus.map((item,index)=>(
-
-<div className="card" key={index}>
-
-<div className="icon">
-
-{item.icon}
-
-</div>
-
-<h3>
-
-{item.name}
-
-</h3>
-
-</div>
-
-))
-
+            <h3>{item.name}</h3>
+          </div>
+        </Link>
+      ))}
+    </section>
+  );
 }
 
-</section>
-
-)
-
-}
-
-export default Menu
+export default Menu;
