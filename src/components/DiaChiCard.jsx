@@ -1,20 +1,26 @@
+import { Link } from "react-router-dom";
+
 function DiaChiCard({ item }) {
   return (
-    <div className="diachi-card">
+    <Link
+      to={`/chi-tiet/${item.id}`}
+      style={{
+        textDecoration: "none",
+        color: "inherit",
+      }}
+    >
+      <div className="diachi-card">
+        <img src={item.hinhanh} alt={item.ten} />
 
-      <img src={item.hinhanh} alt={item.ten} />
+        <div className="card-content">
+          <h3>{item.ten}</h3>
 
-      <div className="card-content">
+          <p>{item.diachi}</p>
 
-        <h3>{item.ten}</h3>
-
-        <p>{item.diachi}</p>
-
-        <button>Xem chi tiết</button>
-
+          <button>Xem chi tiết</button>
+        </div>
       </div>
-
-    </div>
+    </Link>
   );
 }
 
