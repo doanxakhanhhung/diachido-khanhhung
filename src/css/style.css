@@ -294,3 +294,85 @@ margin-bottom:15px;
 width:100%;
 
 }
+/* ===========================
+   TRANG CHI TIẾT
+=========================== */
+
+.detail-container{
+    max-width:1200px;
+    margin:40px auto;
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.detail-banner{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+
+.detail-content{
+    padding:40px;
+}
+
+.detail-content h1{
+    color:#0054a6;
+    margin-bottom:20px;
+}
+
+.detail-content h2{
+    color:#0054a6;
+    margin-top:35px;
+    margin-bottom:12px;
+}
+
+.detail-content p{
+    line-height:1.8;
+    color:#444;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:12px;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.gallery img:hover{
+    transform:scale(1.04);
+}
+
+.btn-back{
+
+    margin-top:40px;
+
+    background:#0054a6;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+}
+
+.btn-back:hover{
+
+    background:#003f7f;
+
+}
