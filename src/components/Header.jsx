@@ -18,7 +18,7 @@ function Header() {
 
           <h3>XÃ KHÁNH HƯNG</h3>
 
-          <p>ĐỊA CHỈ ĐỎ SỐ</p>
+          <p>TỈNH TÂY NINH</p>
 
         </div>
 
