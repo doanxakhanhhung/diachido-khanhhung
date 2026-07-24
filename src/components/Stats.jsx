@@ -1,9 +1,6 @@
 function Stats() {
   return (
-    <section
-  className="stats"
-  data-aos="fade-up"
->
+    <section className="stats">
 
       <div className="stat">
         <h2>03</h2>
@@ -11,18 +8,18 @@ function Stats() {
       </div>
 
       <div className="stat">
-        <h2>50+</h2>
-        <p>Hình ảnh</p>
+        <h2>100+</h2>
+        <p>Hình ảnh tư liệu</p>
       </div>
 
       <div className="stat">
         <h2>10+</h2>
-        <p>Video</p>
+        <p>Video giới thiệu</p>
       </div>
 
       <div className="stat">
-        <h2>100%</h2>
-        <p>Dữ liệu số hóa</p>
+        <h2>24/7</h2>
+        <p>Truy cập mọi lúc</p>
       </div>
 
     </section>
