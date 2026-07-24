@@ -4,21 +4,38 @@ function DiaChiCard({ item }) {
   return (
     <Link
       to={`/chi-tiet/${item.id}`}
-      style={{
-        textDecoration: "none",
-        color: "inherit",
-      }}
+      className="card-link"
     >
-      <div className="diachi-card">
-        <img src={item.hinhanh} alt={item.ten} />
+      <div
+  className="diachi-card"
+  data-aos="zoom-in"
+>
+
+        <div className="image-box">
+
+          <img
+            src={item.hinhanh}
+            alt={item.ten}
+          />
+
+          <span className="badge">
+            📍 Địa chỉ đỏ
+          </span>
+
+        </div>
 
         <div className="card-content">
+
           <h3>{item.ten}</h3>
 
           <p>{item.diachi}</p>
 
-          <button>Xem chi tiết</button>
+          <button>
+            Khám phá →
+          </button>
+
         </div>
+
       </div>
     </Link>
   );
