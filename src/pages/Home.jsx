@@ -6,11 +6,13 @@ import DiaChiList from "../components/DiaChiList";
 import Footer from "../components/Footer";
 
 import "../css/style.css";
+import Stats from "../components/Stats";
 
 function Home() {
   return (
     <>
       <Header />
+      <Stats />
       <Hero />
       <Menu />
       <DiaChiList />
