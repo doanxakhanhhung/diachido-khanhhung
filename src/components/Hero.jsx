@@ -1,37 +1,36 @@
-import { useEffect, useState } from "react";
+function Hero() {
 
-import logo from "../assets/images/logo-doan.png";
+  const scrollToDiaChi = () => {
+    const section = document.getElementById("diachi");
 
-function Header() {
-  const [scroll, setScroll] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  };
 
   return (
-    <header className={scroll ? "header active" : "header"}>
-      <div className="header-container">
-        <div className="logo">
-          <img src={logo} alt="Logo" />
-        </div>
+    <section className="hero">
 
-        <div className="title">
-          <h2>ĐỊA CHỈ ĐỎ SỐ</h2>
-          <h3>XÃ KHÁNH HƯNG</h3>
-          <p>Khám phá lịch sử bằng công nghệ số</p>
-        </div>
+      <div className="overlay">
+
+        <h1>
+          ĐỊA CHỈ ĐỎ SỐ
+        </h1>
+
+        <p>
+          Khám phá lịch sử cách mạng quê hương Khánh Hưng
+        </p>
+
+        <button onClick={scrollToDiaChi}>
+          BẮT ĐẦU KHÁM PHÁ
+        </button>
+
       </div>
-    </header>
+
+    </section>
   );
 }
 
-export default Header;
+export default Hero;
