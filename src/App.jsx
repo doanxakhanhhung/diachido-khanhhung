@@ -6,8 +6,24 @@ import BanDo from "./pages/BanDo";
 import ThuVien from "./pages/ThuVien";
 import Video from "./pages/Video";
 import ChiTiet from "./pages/ChiTiet";
+import { useEffect } from "react";
 
+import AOS from "aos";
 function App() {
+
+  useEffect(() => {
+
+    AOS.init({
+
+      duration:1000,
+
+      once:true,
+
+      offset:100
+
+    });
+
+  },[]);
   return (
     <Routes>
       <Route path="/" element={<Home />} />
