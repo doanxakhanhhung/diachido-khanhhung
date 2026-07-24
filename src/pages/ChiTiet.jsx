@@ -12,7 +12,10 @@ function ChiTiet() {
   }
 
   return (
-    <div className="detail-container">
+    <div
+  className="detail-container"
+  data-aos="fade-up"
+>
       <img
         src={item.hinhanh}
         alt={item.ten}
