@@ -181,17 +181,12 @@ body{
 
 .card{
     background:#fff;
-    border-radius:18px;
-    padding:35px 25px;
-
+    border-radius:22px;
+    padding:40px 20px;
     text-align:center;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
     transition:.35s;
-
     cursor:pointer;
-
     border-top:5px solid #0054a6;
 }
 
@@ -201,6 +196,20 @@ body{
     box-shadow:0 20px 40px rgba(0,0,0,.18);
 
     border-top:5px solid #FFD500;
+}
+.icon{
+    font-size:56px;
+    margin-bottom:18px;
+    transition:.35s;
+}
+
+.card h3{
+    font-size:20px;
+    color:#0054a6;
+}
+
+.card:hover .icon{
+    transform:scale(1.2) rotate(8deg);
 }
 .card h2{
     font-size:55px;
