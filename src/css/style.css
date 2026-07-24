@@ -74,11 +74,16 @@ body{
     justify-content:center;
     align-items:center;
 
+    background:
+        linear-gradient(
+            rgba(0,0,0,.45),
+            rgba(0,0,0,.45)
+        ),
+        url("../assets/images/banner/banner.jpg");
+
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
-
-    transition:background-image 1s ease-in-out;
 
     position:relative;
     overflow:hidden;
