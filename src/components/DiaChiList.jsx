@@ -3,7 +3,10 @@ import DiaChiCard from "./DiaChiCard";
 
 function DiaChiList() {
   return (
-    <section className="diachi">
+    <section
+  id="diachi"
+  className="diachi"
+>
       <h2>📍 ĐỊA CHỈ ĐỎ NỔI BẬT</h2>
 
       <div className="diachi-grid">
