@@ -1,43 +1,37 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-import banner1 from "../assets/images/banner/banner1.jpg";
-import banner2 from "../assets/images/banner/banner2.jpg";
-import banner3 from "../assets/images/banner/banner3.jpg";
+import logo from "../assets/images/logo-doan.png";
 
-function Hero() {
-  const banners = [banner1, banner2, banner3];
-
-  const [current, setCurrent] = useState(0);
+function Header() {
+  const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % banners.length);
-    }, 5000);
+    const handleScroll = () => {
+      setScroll(window.scrollY > 50);
+    };
 
-    return () => clearInterval(timer);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <section
-      className="hero"
-      style={{
-        backgroundImage: `
-          linear-gradient(rgba(0,50,120,.55), rgba(0,50,120,.55)),
-          url(${banners[current]})
-        `,
-      }}
-    >
-      <div className="overlay">
-        <h1>ĐỊA CHỈ ĐỎ SỐ</h1>
+    <header className={scroll ? "header active" : "header"}>
+      <div className="header-container">
+        <div className="logo">
+          <img src={logo} alt="Logo" />
+        </div>
 
-        <p>
-          Khám phá lịch sử cách mạng quê hương Khánh Hưng
-        </p>
-
-        <button>BẮT ĐẦU KHÁM PHÁ</button>
+        <div className="title">
+          <h2>ĐỊA CHỈ ĐỎ SỐ</h2>
+          <h3>XÃ KHÁNH HƯNG</h3>
+          <p>Khám phá lịch sử bằng công nghệ số</p>
+        </div>
       </div>
-    </section>
+    </header>
   );
 }
 
-export default Hero;
+export default Header;
