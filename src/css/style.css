@@ -1,167 +1,74 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-font-family:Arial;
-background:#f4f7fb;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#333;
 }
+
+/* ===========================
+   HEADER
+=========================== */
 
 .header{
-background:#0056b3;
-color:white;
-padding:40px;
-text-align:center;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    padding:15px 40px;
+    background:transparent;
+    transition:.4s;
 }
 
-.hero{
-
-padding:80px;
-
-text-align:center;
-
-background:#0077ff;
-
-color:white;
-
-}
-
-.hero h1{
-
-font-size:50px;
-
-margin-bottom:20px;
-
-}
-
-.hero p{
-
-font-size:22px;
-
-margin-bottom:30px;
-
-}
-
-.hero button{
-
-padding:15px 35px;
-
-font-size:18px;
-
-border:none;
-
-border-radius:40px;
-
-background:#FFD500;
-
-cursor:pointer;
-
-}
-
-.menu{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-
-gap:20px;
-
-padding:40px;
-
-}
-
-.card{
-
-background:white;
-
-padding:40px;
-
-border-radius:15px;
-
-box-shadow:0 0 10px rgba(0,0,0,.1);
-
-text-align:center;
-
-font-size:30px;
-
-transition:.3s;
-
-cursor:pointer;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-
-}
-
-footer{
-
-background:#0056b3;
-
-color:white;
-
-padding:20px;
-
-text-align:center;
-
-}.header{
-
-background:#0054a6;
-
-color:white;
-
-padding:15px;
-
+.header.active{
+    background:#0054a6;
+    box-shadow:0 5px 18px rgba(0,0,0,.2);
 }
 
 .header-container{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-gap:20px;
-
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
 }
 
 .logo img{
-
-width:70px;
-
-height:70px;
-
+    width:70px;
+    height:70px;
 }
 
 .title h2{
-
-font-size:28px;
-
+    color:#fff;
+    font-size:28px;
 }
 
 .title h3{
-
-font-size:22px;
-
-margin-top:5px;
-
+    color:#fff;
+    font-size:22px;
+    margin-top:5px;
 }
 
 .title p{
+    color:#fff;
+    font-size:16px;
+    margin-top:8px;
+    opacity:.9;
+}
 
-margin-top:8px;
+/* ===========================
+   HERO
+=========================== */
 
-font-size:16px;
-
-opacity:.9;
-
-}.hero{
+.hero{
     height:500px;
+    padding-top:90px;
 
     display:flex;
     justify-content:center;
@@ -173,10 +80,22 @@ opacity:.9;
 
     transition:background-image 1s ease-in-out;
 
-    color:white;
+    position:relative;
+    overflow:hidden;
+
+    color:#fff;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
 }
 
 .overlay{
+    position:relative;
+    z-index:2;
     text-align:center;
 }
 
@@ -187,117 +106,166 @@ opacity:.9;
 
 .hero p{
     font-size:24px;
-    margin-bottom:30px;
+    margin-bottom:35px;
 }
 
 .hero button{
-
     background:#FFD500;
-
     color:#000;
-
     border:none;
-
     border-radius:50px;
-
-    padding:18px 40px;
-
+    padding:18px 45px;
     font-size:20px;
-
     cursor:pointer;
-
     transition:.3s;
 }
 
 .hero button:hover{
-
     background:#ffca00;
-
-    transform:scale(1.05);
-
+    transform:translateY(-3px);
 }
+
+/* ===========================
+   STATS
+=========================== */
+
+.stats{
+    max-width:1200px;
+    margin:-50px auto 50px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    position:relative;
+    z-index:10;
+}
+
+.stat{
+    background:#fff;
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(0,0,0,.1);
+}
+
+.stat h2{
+    color:#0054a6;
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.stat p{
+    color:#666;
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+.menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    padding:50px;
+}
+
+.card{
+    background:#fff;
+    border-radius:18px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 35px rgba(0,0,0,.18);
+}
+
+/* ===========================
+   DANH SÁCH ĐỊA CHỈ
+=========================== */
+
 .diachi{
     padding:60px;
 }
 
 .diachi h2{
     text-align:center;
-    margin-bottom:40px;
     color:#0054a6;
+    margin-bottom:45px;
 }
 
 .diachi-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-gap:30px;
-
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+    gap:30px;
 }
 
 .diachi-card{
-
-background:white;
-
-border-radius:15px;
-
-overflow:hidden;
-
-box-shadow:0 8px 20px rgba(0,0,0,.1);
-
-transition:.3s;
-
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    transition:.35s;
 }
 
 .diachi-card:hover{
-
-transform:translateY(-8px);
-
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
 }
 
 .diachi-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    transition:.4s;
+}
 
-width:100%;
-
-height:220px;
-
-object-fit:cover;
-
+.diachi-card:hover img{
+    transform:scale(1.08);
 }
 
 .card-content{
-
-padding:20px;
-
+    padding:22px;
 }
 
 .card-content h3{
-
-margin-bottom:10px;
-
+    margin-bottom:12px;
+    color:#0054a6;
 }
 
 .card-content p{
-
-color:#666;
-
-margin-bottom:15px;
-
+    color:#666;
+    margin-bottom:18px;
 }
 
 .card-content button{
-
-width:100%;
-
+    width:100%;
+    border:none;
+    background:#0054a6;
+    color:#fff;
+    padding:14px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
 }
+
+.card-content button:hover{
+    background:#003f7f;
+}
+
 /* ===========================
    TRANG CHI TIẾT
 =========================== */
 
 .detail-container{
     max-width:1200px;
-    margin:40px auto;
+    margin:120px auto 50px;
     background:#fff;
     border-radius:18px;
     overflow:hidden;
@@ -306,7 +274,7 @@ width:100%;
 
 .detail-banner{
     width:100%;
-    height:500px;
+    height:520px;
     object-fit:cover;
 }
 
@@ -327,7 +295,6 @@ width:100%;
 
 .detail-content p{
     line-height:1.8;
-    color:#444;
 }
 
 .gallery{
@@ -340,36 +307,172 @@ width:100%;
 .gallery img{
     width:100%;
     border-radius:12px;
-    transition:.3s;
     cursor:pointer;
+    transition:.3s;
 }
 
 .gallery img:hover{
-    transform:scale(1.04);
+    transform:scale(1.05);
+    box-shadow:0 12px 25px rgba(0,0,0,.2);
 }
 
 .btn-back{
-
     margin-top:40px;
-
+    padding:15px 35px;
     background:#0054a6;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-back:hover{
+    background:#003f7f;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    background:#0054a6;
+    color:#fff;
+    padding:25px;
+    text-align:center;
+    margin-top:60px;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+}
+
+.header{
+    padding:12px 20px;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+}
+
+.title h2{
+    font-size:20px;
+}
+
+.title h3{
+    font-size:16px;
+}
+
+.title p{
+    display:none;
+}
+
+.hero{
+    height:340px;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.hero button{
+    font-size:17px;
+    padding:15px 30px;
+}
+
+.menu{
+    padding:25px;
+}
+
+.diachi{
+    padding:25px;
+}
+
+.stats{
+    margin:25px;
+}
+
+.detail-banner{
+    height:250px;
+}
+
+.detail-content{
+    padding:25px;
+}
+
+/* ===========================
+   CARD 3.0
+=========================== */
+
+.card-link{
+    text-decoration:none;
+    color:inherit;
+}
+
+.image-box{
+    position:relative;
+    overflow:hidden;
+}
+
+.image-box img{
+    transition:.5s;
+}
+
+.diachi-card:hover .image-box img{
+    transform:scale(1.1);
+}
+
+.badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+
+    background:#d60000;
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+
+.card-content button{
+
+    width:100%;
+
+    padding:14px;
+
+    background:linear-gradient(90deg,#0054a6,#0078ff);
 
     color:white;
 
     border:none;
 
-    padding:15px 35px;
-
     border-radius:8px;
 
-    cursor:pointer;
+    font-size:16px;
 
-    font-size:17px;
+    transition:.3s;
 
 }
 
-.btn-back:hover{
+.card-content button:hover{
 
-    background:#003f7f;
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(0,84,166,.35);
 
 }
