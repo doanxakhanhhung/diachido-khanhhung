@@ -25,7 +25,10 @@ const menus = [
 
 function Menu() {
   return (
-    <section className="menu">
+    <section
+  className="menu"
+  data-aos="fade-up"
+>
       {menus.map((item, index) => (
         <Link
           key={index}
