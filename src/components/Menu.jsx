@@ -1,47 +1,44 @@
 import { Link } from "react-router-dom";
 
-const menus = [
-  {
-    icon: "📍",
-    name: "Địa chỉ đỏ",
-    link: "/dia-chi",
-  },
-  {
-    icon: "🗺️",
-    name: "Bản đồ",
-    link: "/ban-do",
-  },
-  {
-    icon: "📷",
-    name: "Thư viện",
-    link: "/thu-vien",
-  },
-  {
-    icon: "🎥",
-    name: "Video",
-    link: "/video",
-  },
-];
-
 function Menu() {
   return (
-    <section
-  className="menu"
-  data-aos="fade-up"
->
-      {menus.map((item, index) => (
-        <Link
-          key={index}
-          to={item.link}
-          style={{ textDecoration: "none", color: "inherit" }}
-        >
-          <div className="card">
-            <div className="icon">{item.icon}</div>
+    <section className="menu">
 
-            <h3>{item.name}</h3>
-          </div>
-        </Link>
-      ))}
+      <Link to="/" className="card-link">
+        <div className="card">
+          <h2>🏠</h2>
+          <h3>Trang chủ</h3>
+        </div>
+      </Link>
+
+      <Link to="/dia-chi" className="card-link">
+        <div className="card">
+          <h2>📍</h2>
+          <h3>Địa chỉ đỏ</h3>
+        </div>
+      </Link>
+
+      <Link to="/ban-do" className="card-link">
+        <div className="card">
+          <h2>🗺</h2>
+          <h3>Bản đồ</h3>
+        </div>
+      </Link>
+
+      <Link to="/thu-vien" className="card-link">
+        <div className="card">
+          <h2>🖼</h2>
+          <h3>Thư viện</h3>
+        </div>
+      </Link>
+
+      <Link to="/video" className="card-link">
+        <div className="card">
+          <h2>🎥</h2>
+          <h3>Video</h3>
+        </div>
+      </Link>
+
     </section>
   );
 }
