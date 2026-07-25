@@ -4,7 +4,7 @@ return(
 
 <footer>
 
-Đoàn TNCS Hồ Chí Minh xã Khánh Hưng
+Đoàn TNCS Hồ Chí Minh xã Khánh Hưng ©
 
 </footer>
 
