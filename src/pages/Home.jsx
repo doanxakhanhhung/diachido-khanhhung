@@ -10,8 +10,8 @@ function Home() {
   return (
     <>
       <Header />
-      <Stats />
       <Hero />
+      <Stats />
       <Menu />
       <DiaChiList />
       <Footer />
