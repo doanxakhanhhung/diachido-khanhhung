@@ -24,7 +24,7 @@ function Hero() {
 
     return () => clearInterval(timer);
 
-  }, []);
+  }, [images.length]);
 
   const scrollToDiaChi = () => {
 
@@ -40,22 +40,33 @@ function Hero() {
 
   };
 
+  const nextSlide = () => {
+
+    setCurrent((prev) => (prev + 1) % images.length);
+
+  };
+
+  const prevSlide = () => {
+
+    setCurrent((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    );
+
+  };
+
   return (
 
     <section
       className="hero"
       style={{
-        backgroundImage: `
-          linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-          url(${images[current]})
-        `,
+        backgroundImage: `linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)), url(${images[current]})`,
       }}
     >
 
       <div
-  className="overlay"
-  data-aos="zoom-in"
->
+        className="overlay"
+        data-aos="zoom-in"
+      >
 
         <h1>ĐỊA CHỈ ĐỎ SỐ</h1>
 
@@ -66,6 +77,34 @@ function Hero() {
         <button onClick={scrollToDiaChi}>
           BẮT ĐẦU KHÁM PHÁ
         </button>
+
+      </div>
+
+      <button
+        className="arrow left"
+        onClick={prevSlide}
+      >
+        ❮
+      </button>
+
+      <button
+        className="arrow right"
+        onClick={nextSlide}
+      >
+        ❯
+      </button>
+
+      <div className="dots">
+
+        {images.map((_, index) => (
+
+          <span
+            key={index}
+            className={current === index ? "dot active" : "dot"}
+            onClick={() => setCurrent(index)}
+          />
+
+        ))}
 
       </div>
 
