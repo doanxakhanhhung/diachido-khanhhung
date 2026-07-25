@@ -645,3 +645,63 @@ footer{
     background:#FFD500;
 
 }
+/* ===========================
+   LIGHTBOX
+=========================== */
+
+.lightbox{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.9);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    animation:fadeIn .3s;
+
+}
+
+.lightbox-image{
+
+    max-width:90%;
+    max-height:90%;
+
+    border-radius:12px;
+
+    box-shadow:0 0 40px rgba(255,255,255,.2);
+
+}
+
+.close{
+
+    position:absolute;
+
+    top:30px;
+    right:40px;
+
+    color:white;
+
+    font-size:45px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
