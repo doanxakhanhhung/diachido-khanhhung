@@ -52,7 +52,10 @@ function Hero() {
       }}
     >
 
-      <div className="overlay">
+      <div
+  className="overlay"
+  data-aos="zoom-in"
+>
 
         <h1>ĐỊA CHỈ ĐỎ SỐ</h1>
 
