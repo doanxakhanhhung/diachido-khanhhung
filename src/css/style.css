@@ -266,7 +266,19 @@ body{
 }
 
 .card-content{
-    padding:22px;
+    color:#666;
+    line-height:1.7;
+}
+
+.address{
+    color:#0054a6 !important;
+    font-weight:600;
+    margin:10px 0;
+}
+
+.description{
+    margin:15px 0 22px;
+    min-height:55px;
 }
 
 .card-content h3{
