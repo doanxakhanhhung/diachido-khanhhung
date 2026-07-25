@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import diaChiDo from "../data/diaChiDo";
 
 function ChiTiet() {
+
   const { id } = useParams();
   const navigate = useNavigate();
 
   const item = diaChiDo.find((x) => x.id == id);
+
+  const [selectedImage, setSelectedImage] = useState(null);
 
   if (!item) {
     return <h2>Không tìm thấy địa chỉ đỏ.</h2>;
@@ -13,9 +17,11 @@ function ChiTiet() {
 
   return (
     <div
-  className="detail-container"
-  data-aos="fade-up"
->
+      className="detail-container"
+      data-aos="fade-up"
+    >
+
+      {/* Banner */}
       <img
         src={item.hinhanh}
         alt={item.ten}
@@ -23,6 +29,7 @@ function ChiTiet() {
       />
 
       <div className="detail-content">
+
         <h1>{item.ten}</h1>
 
         <hr />
@@ -39,17 +46,49 @@ function ChiTiet() {
         <h2>⭐ Ý nghĩa giáo dục</h2>
         <p>{item.ynghia}</p>
 
+        {/* Gallery */}
         <h2>📸 Thư viện ảnh</h2>
 
         <div className="gallery">
+
           {item.gallery.map((img, index) => (
+
             <img
               key={index}
               src={img}
               alt={`Ảnh ${index + 1}`}
+              onClick={() => setSelectedImage(img)}
             />
+
           ))}
+
         </div>
+
+        {/* Lightbox */}
+
+        {selectedImage && (
+
+          <div
+            className="lightbox"
+            onClick={() => setSelectedImage(null)}
+          >
+
+            <span className="close">
+              ✕
+            </span>
+
+            <img
+              src={selectedImage}
+              alt="Ảnh phóng to"
+              className="lightbox-image"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+          </div>
+
+        )}
+
+        {/* Video */}
 
         <h2>🎥 Video</h2>
 
@@ -61,9 +100,10 @@ function ChiTiet() {
           ▶ Xem Video
         </a>
 
+        {/* Google Maps */}
+
         <h2>🗺 Google Maps</h2>
 
-        {/* Bước 7: Hiển thị bản đồ ngay trên website */}
         <iframe
           src={item.map}
           width="100%"
@@ -77,16 +117,13 @@ function ChiTiet() {
           allowFullScreen
           referrerPolicy="no-referrer-when-downgrade"
           title="Google Maps"
-        ></iframe>
+        />
 
         <br />
         <br />
 
-        {/* Bước 8: Nút chỉ đường */}
         <a
-          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-            item.diachi
-          )}`}
+          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.diachi)}`}
           target="_blank"
           rel="noreferrer"
         >
@@ -94,6 +131,8 @@ function ChiTiet() {
             📍 Chỉ đường đến đây
           </button>
         </a>
+
+        {/* QR */}
 
         <h2>📱 Mã QR</h2>
 
@@ -112,9 +151,12 @@ function ChiTiet() {
         >
           ⬅ Quay lại Trang chủ
         </button>
+
       </div>
+
     </div>
   );
+
 }
 
 export default ChiTiet;
