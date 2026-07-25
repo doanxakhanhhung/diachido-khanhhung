@@ -139,16 +139,19 @@ body{
     position:relative;
     z-index:2;
     text-align:center;
+    color:#fff;
 }
 
 .hero h1{
     font-size:60px;
     margin-bottom:20px;
+    color:#fff;
 }
 
 .hero p{
     font-size:24px;
     margin-bottom:35px;
+    color:#fff;
 }
 
 .hero button{
