@@ -5,6 +5,7 @@ import Menu from "../components/Menu";
 import DiaChiList from "../components/DiaChiList";
 import Footer from "../components/Footer";
 import "../css/style.css";
+import About from "../components/About";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <Header />
       <Hero />
       <Stats />
+      <About />
       <Menu />
       <DiaChiList />
       <Footer />
