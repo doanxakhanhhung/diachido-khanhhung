@@ -1,160 +1,244 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+
 import diaChiDo from "../data/diaChiDo";
+import Lightbox from "../components/Lightbox";
 
 function ChiTiet() {
 
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+
   const item = diaChiDo.find((x) => x.id == id);
 
-  const [selectedImage, setSelectedImage] = useState(null);
-
   if (!item) {
-    return <h2>Không tìm thấy địa chỉ đỏ.</h2>;
+    return (
+      <div className="detail-container">
+        <div className="detail-content">
+          <h2>Không tìm thấy địa chỉ đỏ.</h2>
+
+          <button
+            className="btn-back"
+            onClick={() => navigate("/")}
+          >
+            ⬅ Quay lại Trang chủ
+          </button>
+        </div>
+      </div>
+    );
   }
 
+  const openLightbox = (index) => {
+
+    setCurrentImage(index);
+    setLightboxOpen(true);
+
+  };
+
+  const closeLightbox = () => {
+
+    setLightboxOpen(false);
+
+  };
+
+  const nextImage = () => {
+
+    setCurrentImage(
+      (prev) => (prev + 1) % item.gallery.length
+    );
+
+  };
+
+  const prevImage = () => {
+
+    setCurrentImage(
+      (prev) =>
+        (prev - 1 + item.gallery.length) %
+        item.gallery.length
+    );
+
+  };
+
   return (
-    <div
-      className="detail-container"
-      data-aos="fade-up"
-    >
 
-      {/* Banner */}
-      <img
-        src={item.hinhanh}
-        alt={item.ten}
-        className="detail-banner"
-      />
+    <>
 
-      <div className="detail-content">
+      <div
+        className="detail-container"
+        data-aos="fade-up"
+      >
 
-        <h1>{item.ten}</h1>
+        {/* ẢNH ĐẠI DIỆN */}
 
-        <hr />
+        <img
+          src={item.hinhanh}
+          alt={item.ten}
+          className="detail-banner"
+        />
 
-        <h2>📍 Địa chỉ</h2>
-        <p>{item.diachi}</p>
+        <div className="detail-content">
 
-        <h2>📖 Giới thiệu</h2>
-        <p>{item.mota}</p>
+          <h1>{item.ten}</h1>
 
-        <h2>📜 Lịch sử</h2>
-        <p>{item.lichsu}</p>
+          <hr />
 
-        <h2>⭐ Ý nghĩa giáo dục</h2>
-        <p>{item.ynghia}</p>
+          {/* ĐỊA CHỈ */}
 
-        {/* Gallery */}
-        <h2>📸 Thư viện ảnh</h2>
+          <h2>📍 Địa chỉ</h2>
 
-        <div className="gallery">
+          <p>
+            {item.diachi}
+          </p>
 
-          {item.gallery.map((img, index) => (
 
-            <img
-              key={index}
-              src={img}
-              alt={`Ảnh ${index + 1}`}
-              onClick={() => setSelectedImage(img)}
-            />
+          {/* GIỚI THIỆU */}
 
-          ))}
+          <h2>📖 Giới thiệu</h2>
 
-        </div>
+          <p>
+            {item.mota}
+          </p>
 
-        {/* Lightbox */}
 
-        {selectedImage && (
+          {/* LỊCH SỬ */}
 
-          <div
-            className="lightbox"
-            onClick={() => setSelectedImage(null)}
-          >
+          <h2>📜 Lịch sử</h2>
 
-            <span className="close">
-              ✕
-            </span>
+          <p>
+            {item.lichsu}
+          </p>
 
-            <img
-              src={selectedImage}
-              alt="Ảnh phóng to"
-              className="lightbox-image"
-              onClick={(e) => e.stopPropagation()}
-            />
+
+          {/* Ý NGHĨA */}
+
+          <h2>⭐ Ý nghĩa giáo dục</h2>
+
+          <p>
+            {item.ynghia}
+          </p>
+
+
+          {/* THƯ VIỆN ẢNH */}
+
+          <h2>📸 Thư viện ảnh</h2>
+
+          <div className="gallery">
+
+            {item.gallery.map((img, index) => (
+
+              <img
+                key={index}
+                src={img}
+                alt={`Ảnh ${index + 1}`}
+                onClick={() => openLightbox(index)}
+              />
+
+            ))}
 
           </div>
 
-        )}
 
-        {/* Video */}
+          {/* VIDEO */}
 
-        <h2>🎥 Video</h2>
+          <h2>🎥 Video</h2>
 
-        <a
-          href={item.video}
-          target="_blank"
-          rel="noreferrer"
-        >
-          ▶ Xem Video
-        </a>
+          <a
+            href={item.video}
+            target="_blank"
+            rel="noreferrer"
+          >
+            ▶ Xem Video
+          </a>
 
-        {/* Google Maps */}
 
-        <h2>🗺 Google Maps</h2>
+          {/* GOOGLE MAPS */}
 
-        <iframe
-          src={item.map}
-          width="100%"
-          height="450"
-          style={{
-            border: 0,
-            borderRadius: "12px",
-            marginTop: "15px",
-          }}
-          loading="lazy"
-          allowFullScreen
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Google Maps"
-        />
+          <h2>🗺 Google Maps</h2>
 
-        <br />
-        <br />
+          <iframe
+            src={item.map}
+            width="100%"
+            height="450"
+            style={{
+              border: 0,
+              borderRadius: "12px",
+              marginTop: "15px",
+            }}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Google Maps"
+          >
+          </iframe>
 
-        <a
-          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.diachi)}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button className="btn-back">
-            📍 Chỉ đường đến đây
+
+          {/* CHỈ ĐƯỜNG */}
+
+          <br />
+          <br />
+
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+              item.diachi
+            )}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+
+            <button className="btn-back">
+              📍 Chỉ đường đến đây
+            </button>
+
+          </a>
+
+
+          {/* QR */}
+
+          <h2>📱 Mã QR</h2>
+
+          <img
+            src={item.qr}
+            alt="QR Code"
+            width="220"
+          />
+
+          <br />
+          <br />
+
+
+          {/* QUAY LẠI */}
+
+          <button
+            className="btn-back"
+            onClick={() => navigate("/")}
+          >
+            ⬅ Quay lại Trang chủ
           </button>
-        </a>
 
-        {/* QR */}
-
-        <h2>📱 Mã QR</h2>
-
-        <img
-          src={item.qr}
-          alt="QR Code"
-          width="220"
-        />
-
-        <br />
-        <br />
-
-        <button
-          className="btn-back"
-          onClick={() => navigate("/")}
-        >
-          ⬅ Quay lại Trang chủ
-        </button>
+        </div>
 
       </div>
 
-    </div>
+
+      {/* LIGHTBOX */}
+
+      {lightboxOpen && (
+
+        <Lightbox
+          images={item.gallery}
+          currentIndex={currentImage}
+          onClose={closeLightbox}
+          onPrev={prevImage}
+          onNext={nextImage}
+        />
+
+      )}
+
+    </>
+
   );
 
 }
