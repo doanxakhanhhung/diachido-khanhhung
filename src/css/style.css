@@ -2466,4 +2466,132 @@ footer{
     }
 
 }
+/* ===========================
+   TOAST THÔNG BÁO
+=========================== */
+
+.toast-message {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px 20px;
+
+    background: #0054a6;
+
+    color: #fff;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    animation:
+        toast-in .35s ease,
+        toast-out .35s ease 1.65s forwards;
+}
+
+.toast-icon {
+    width: 24px;
+
+    height: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fff;
+
+    color: #0054a6;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+
+}
+
+
+/* ===========================
+   TOAST ANIMATION
+=========================== */
+
+@keyframes toast-in {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes toast-out {
+
+    from {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    to {
+        opacity: 0;
+
+        transform:
+            translateY(10px)
+            scale(.95);
+    }
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .toast-message {
+
+        left: 20px;
+
+        right: 20px;
+
+        bottom: 20px;
+
+        justify-content: center;
+
+        text-align: center;
+
+    }
+
+}
 }
