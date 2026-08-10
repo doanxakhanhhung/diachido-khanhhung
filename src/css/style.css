@@ -1873,4 +1873,87 @@ footer{
     }
 
 }
+/* ===========================
+   GALLERY OVERLAY
+=========================== */
+
+.gallery-item {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+}
+
+
+/* ẢNH */
+
+.gallery-item img {
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: .4s;
+}
+
+
+/* LỚP PHỦ */
+
+.gallery-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0, 84, 166, .65);
+
+    color: #fff;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    transition: .4s;
+}
+
+
+/* HOVER */
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 600px) {
+
+    .gallery-item img {
+        height: 150px;
+    }
+
+    .gallery-overlay {
+        font-size: 14px;
+    }
+
+}
 }
