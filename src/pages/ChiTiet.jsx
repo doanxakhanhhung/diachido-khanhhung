@@ -117,6 +117,63 @@ function ChiTiet() {
             </div>
 
           </div>
+          <div className="detail-quick-info">
+
+  <div className="quick-info-item">
+
+    <div className="quick-info-icon">
+      🏛
+    </div>
+
+    <div className="quick-info-text">
+
+      <strong>Loại địa điểm</strong>
+
+      <span>Địa chỉ đỏ</span>
+
+    </div>
+
+  </div>
+
+
+  <div className="quick-info-item">
+
+    <div className="quick-info-icon">
+      📸
+    </div>
+
+    <div className="quick-info-text">
+
+      <strong>Tư liệu</strong>
+
+      <span>
+        {item.gallery?.length || 0} hình ảnh
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <div className="quick-info-item">
+
+    <div className="quick-info-icon">
+      🎥
+    </div>
+
+    <div className="quick-info-text">
+
+      <strong>Video</strong>
+
+      <span>
+        Giới thiệu địa điểm
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
 
           <hr />
 
