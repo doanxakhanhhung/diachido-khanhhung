@@ -101,24 +101,24 @@ function ChiTiet() {
 
         <div className="detail-content">
 
+
           {/* ===========================
-              TIÊU ĐỀ
+              TIÊU ĐỀ + ĐỊA CHỈ
           =========================== */}
 
-          <h1>
-            {item.ten}
-          </h1>
+          <div className="detail-title">
+
+            <h1>
+              {item.ten}
+            </h1>
+
+            <div className="detail-address">
+              📍 {item.diachi}
+            </div>
+
+          </div>
 
           <hr />
-
-
-          {/* ===========================
-              ĐỊA CHỈ
-          =========================== */}
-
-          <p>
-            📍 {item.diachi}
-          </p>
 
 
           {/* ===========================
@@ -214,7 +214,6 @@ function ChiTiet() {
 
             <div className="detail-map">
 
-
               <div className="detail-map-box">
 
 
@@ -252,9 +251,7 @@ function ChiTiet() {
                 >
 
                   <button className="btn-back">
-
                     📍 Chỉ đường đến đây
-
                   </button>
 
                 </a>
