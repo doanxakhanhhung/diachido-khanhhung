@@ -11,6 +11,7 @@ function ChiTiet() {
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [toast, setToast] = useState("");
 
   const item = diaChiDo.find((x) => x.id == id);
 
@@ -131,17 +132,23 @@ function ChiTiet() {
 
     try {
 
-      await navigator.clipboard.writeText(
-        window.location.href
-      );
+    await navigator.clipboard.writeText(
+      window.location.href
+    );
 
-      alert("Đã sao chép liên kết!");
+    setToast("Đã sao chép liên kết!");
 
-    } catch (error) {
+    setTimeout(() => {
+      setToast("");
+    }, 2000);
 
-      alert(
-        "Không thể sao chép liên kết. Vui lòng sao chép địa chỉ trên trình duyệt."
-      );
+  } catch (error) {
+
+    setToast("Không thể sao chép liên kết.");
+
+    setTimeout(() => {
+      setToast("");
+    }, 2500);
 
     }
 
@@ -562,6 +569,21 @@ function ChiTiet() {
         />
 
       )}
+      {toast && (
+
+  <div className="toast-message">
+
+    <span className="toast-icon">
+      ✓
+    </span>
+
+    <span>
+      {toast}
+    </span>
+
+  </div>
+
+)}
 
     </>
 
