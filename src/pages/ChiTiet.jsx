@@ -79,6 +79,75 @@ function ChiTiet() {
   };
 
 
+  // ===========================
+  // CHIA SẺ TRANG
+  // ===========================
+
+  const sharePage = async () => {
+
+    const shareData = {
+      title: item.ten,
+
+      text:
+        `Khám phá ${item.ten} - Địa chỉ đỏ xã Khánh Hưng`,
+
+      url: window.location.href,
+    };
+
+
+    try {
+
+      if (navigator.share) {
+
+        await navigator.share(shareData);
+
+      } else {
+
+        await navigator.clipboard.writeText(
+          window.location.href
+        );
+
+        alert("Đã sao chép liên kết!");
+
+      }
+
+    } catch (error) {
+
+      console.log(
+        "Chia sẻ đã bị hủy:",
+        error
+      );
+
+    }
+
+  };
+
+
+  // ===========================
+  // SAO CHÉP LIÊN KẾT
+  // ===========================
+
+  const copyLink = async () => {
+
+    try {
+
+      await navigator.clipboard.writeText(
+        window.location.href
+      );
+
+      alert("Đã sao chép liên kết!");
+
+    } catch (error) {
+
+      alert(
+        "Không thể sao chép liên kết. Vui lòng sao chép địa chỉ trên trình duyệt."
+      );
+
+    }
+
+  };
+
+
   return (
 
     <>
@@ -87,6 +156,7 @@ function ChiTiet() {
         className="detail-container"
         data-aos="fade-up"
       >
+
 
         {/* ===========================
             ẢNH ĐẠI DIỆN
@@ -112,68 +182,136 @@ function ChiTiet() {
               {item.ten}
             </h1>
 
+
             <div className="detail-address">
+
               📍 {item.diachi}
+
             </div>
 
           </div>
+
+
+          {/* ===========================
+              THÔNG TIN NHANH
+          =========================== */}
+
           <div className="detail-quick-info">
 
-  <div className="quick-info-item">
 
-    <div className="quick-info-icon">
-      🏛
-    </div>
+            {/* LOẠI ĐỊA ĐIỂM */}
 
-    <div className="quick-info-text">
+            <div className="quick-info-item">
 
-      <strong>Loại địa điểm</strong>
+              <div className="quick-info-icon">
+                🏛
+              </div>
 
-      <span>Địa chỉ đỏ</span>
+              <div className="quick-info-text">
 
-    </div>
+                <strong>
+                  Loại địa điểm
+                </strong>
 
-  </div>
+                <span>
+                  Địa chỉ đỏ
+                </span>
 
+              </div>
 
-  <div className="quick-info-item">
-
-    <div className="quick-info-icon">
-      📸
-    </div>
-
-    <div className="quick-info-text">
-
-      <strong>Tư liệu</strong>
-
-      <span>
-        {item.gallery?.length || 0} hình ảnh
-      </span>
-
-    </div>
-
-  </div>
+            </div>
 
 
-  <div className="quick-info-item">
+            {/* HÌNH ẢNH */}
 
-    <div className="quick-info-icon">
-      🎥
-    </div>
+            <div className="quick-info-item">
 
-    <div className="quick-info-text">
+              <div className="quick-info-icon">
+                📸
+              </div>
 
-      <strong>Video</strong>
+              <div className="quick-info-text">
 
-      <span>
-        Giới thiệu địa điểm
-      </span>
+                <strong>
+                  Tư liệu
+                </strong>
 
-    </div>
+                <span>
+                  {item.gallery?.length || 0} hình ảnh
+                </span>
 
-  </div>
+              </div>
 
-</div>
+            </div>
+
+
+            {/* VIDEO */}
+
+            <div className="quick-info-item">
+
+              <div className="quick-info-icon">
+                🎥
+              </div>
+
+              <div className="quick-info-text">
+
+                <strong>
+                  Video
+                </strong>
+
+                <span>
+                  Giới thiệu địa điểm
+                </span>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          {/* ===========================
+              CHIA SẺ
+          =========================== */}
+
+          <div className="detail-share">
+
+
+            <div className="detail-share-title">
+
+              📤 Chia sẻ địa chỉ đỏ
+
+            </div>
+
+
+            <div className="detail-share-buttons">
+
+
+              <button
+                className="share-btn share"
+                onClick={sharePage}
+              >
+
+                📤 Chia sẻ
+
+              </button>
+
+
+              <button
+                className="share-btn copy"
+                onClick={copyLink}
+              >
+
+                📋 Sao chép liên kết
+
+              </button>
+
+
+            </div>
+
+          </div>
+
 
           <hr />
 
@@ -256,7 +394,9 @@ function ChiTiet() {
                   target="_blank"
                   rel="noreferrer"
                 >
+
                   ▶ Xem Video
+
                 </a>
 
               </div>
@@ -271,6 +411,7 @@ function ChiTiet() {
 
             <div className="detail-map">
 
+
               <div className="detail-map-box">
 
 
@@ -279,6 +420,7 @@ function ChiTiet() {
                 <h2>
                   🗺 Vị trí
                 </h2>
+
 
                 <iframe
                   src={item.map}
@@ -308,7 +450,9 @@ function ChiTiet() {
                 >
 
                   <button className="btn-back">
+
                     📍 Chỉ đường đến đây
+
                   </button>
 
                 </a>
@@ -338,6 +482,7 @@ function ChiTiet() {
 
             </div>
 
+
           </div>
 
 
@@ -349,28 +494,36 @@ function ChiTiet() {
             📸 Thư viện ảnh
           </h2>
 
+
           <div className="gallery">
+
 
             {item.gallery.map((img, index) => (
 
-    <div
-      className="gallery-item"
-      key={index}
-      onClick={() => openLightbox(index)}
-    >
+              <div
+                className="gallery-item"
+                key={index}
+                onClick={() =>
+                  openLightbox(index)
+                }
+              >
 
-      <img
-        src={img}
-        alt={`Ảnh ${index + 1}`}
-      />
+                <img
+                  src={img}
+                  alt={`Ảnh ${index + 1}`}
+                />
 
-      <div className="gallery-overlay">
-        🔍 Xem ảnh
-      </div>
 
-    </div>
+                <div className="gallery-overlay">
 
-  ))}
+                  🔍 Xem ảnh
+
+                </div>
+
+              </div>
+
+            ))}
+
 
           </div>
 
@@ -383,7 +536,9 @@ function ChiTiet() {
             className="btn-back"
             onClick={() => navigate("/")}
           >
+
             ⬅ Quay lại Trang chủ
+
           </button>
 
 
