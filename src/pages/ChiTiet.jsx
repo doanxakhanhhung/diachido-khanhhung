@@ -17,8 +17,12 @@ function ChiTiet() {
   if (!item) {
     return (
       <div className="detail-container">
+
         <div className="detail-content">
-          <h2>Không tìm thấy địa chỉ đỏ.</h2>
+
+          <h2>
+            Không tìm thấy địa chỉ đỏ.
+          </h2>
 
           <button
             className="btn-back"
@@ -26,17 +30,26 @@ function ChiTiet() {
           >
             ⬅ Quay lại Trang chủ
           </button>
+
         </div>
+
       </div>
     );
   }
 
+
+  // ===========================
+  // LIGHTBOX
+  // ===========================
+
   const openLightbox = (index) => {
 
     setCurrentImage(index);
+
     setLightboxOpen(true);
 
   };
+
 
   const closeLightbox = () => {
 
@@ -44,13 +57,16 @@ function ChiTiet() {
 
   };
 
+
   const nextImage = () => {
 
     setCurrentImage(
-      (prev) => (prev + 1) % item.gallery.length
+      (prev) =>
+        (prev + 1) % item.gallery.length
     );
 
   };
+
 
   const prevImage = () => {
 
@@ -62,6 +78,7 @@ function ChiTiet() {
 
   };
 
+
   return (
 
     <>
@@ -71,7 +88,9 @@ function ChiTiet() {
         data-aos="fade-up"
       >
 
-        {/* ẢNH ĐẠI DIỆN */}
+        {/* ===========================
+            ẢNH ĐẠI DIỆN
+        =========================== */}
 
         <img
           src={item.hinhanh}
@@ -79,137 +98,226 @@ function ChiTiet() {
           className="detail-banner"
         />
 
+
         <div className="detail-content">
 
-          <h1>{item.ten}</h1>
+          {/* ===========================
+              TIÊU ĐỀ
+          =========================== */}
+
+          <h1>
+            {item.ten}
+          </h1>
 
           <hr />
 
-          {/* ĐỊA CHỈ */}
 
-          <h2>📍 Địa chỉ</h2>
+          {/* ===========================
+              ĐỊA CHỈ
+          =========================== */}
 
           <p>
-            {item.diachi}
+            📍 {item.diachi}
           </p>
 
 
-          {/* GIỚI THIỆU */}
+          {/* ===========================
+              BỐ CỤC 2 CỘT
+          =========================== */}
 
-          <h2>📖 Giới thiệu</h2>
-
-          <p>
-            {item.mota}
-          </p>
+          <div className="detail-two-column">
 
 
-          {/* LỊCH SỬ */}
+            {/* ===========================
+                CỘT TRÁI
+            =========================== */}
 
-          <h2>📜 Lịch sử</h2>
-
-          <p>
-            {item.lichsu}
-          </p>
+            <div className="detail-info">
 
 
-          {/* Ý NGHĨA */}
+              {/* GIỚI THIỆU */}
 
-          <h2>⭐ Ý nghĩa giáo dục</h2>
+              <div className="detail-section">
 
-          <p>
-            {item.ynghia}
-          </p>
+                <h2>
+                  📖 Giới thiệu
+                </h2>
+
+                <p>
+                  {item.mota}
+                </p>
+
+              </div>
 
 
-          {/* THƯ VIỆN ẢNH */}
+              {/* LỊCH SỬ */}
 
-          <h2>📸 Thư viện ảnh</h2>
+              <div className="detail-section">
 
-          <div className="gallery">
+                <h2>
+                  📜 Lịch sử
+                </h2>
 
-            {item.gallery.map((img, index) => (
+                <p>
+                  {item.lichsu}
+                </p>
 
-              <img
-                key={index}
-                src={img}
-                alt={`Ảnh ${index + 1}`}
-                onClick={() => openLightbox(index)}
-              />
+              </div>
 
-            ))}
+
+              {/* Ý NGHĨA */}
+
+              <div className="detail-section">
+
+                <h2>
+                  ⭐ Ý nghĩa giáo dục
+                </h2>
+
+                <p>
+                  {item.ynghia}
+                </p>
+
+              </div>
+
+
+              {/* ===========================
+                  VIDEO
+              =========================== */}
+
+              <div className="detail-section">
+
+                <h2>
+                  🎥 Video
+                </h2>
+
+                <p>
+                  Xem video giới thiệu về địa chỉ đỏ:
+                </p>
+
+                <a
+                  href={item.video}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  ▶ Xem Video
+                </a>
+
+              </div>
+
+
+            </div>
+
+
+            {/* ===========================
+                CỘT PHẢI
+            =========================== */}
+
+            <div className="detail-map">
+
+
+              <div className="detail-map-box">
+
+
+                {/* GOOGLE MAP */}
+
+                <h2>
+                  🗺 Vị trí
+                </h2>
+
+                <iframe
+                  src={item.map}
+                  width="100%"
+                  height="350"
+                  style={{
+                    border: 0,
+                    borderRadius: "12px",
+                    marginTop: "10px",
+                  }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Maps"
+                >
+                </iframe>
+
+
+                {/* CHỈ ĐƯỜNG */}
+
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    item.diachi
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+
+                  <button className="btn-back">
+
+                    📍 Chỉ đường đến đây
+
+                  </button>
+
+                </a>
+
+
+                {/* QR */}
+
+                <div className="detail-qr">
+
+                  <h2>
+                    📱 Mã QR
+                  </h2>
+
+                  <p>
+                    Quét mã QR để truy cập thông tin.
+                  </p>
+
+                  <img
+                    src={item.qr}
+                    alt="QR Code"
+                  />
+
+                </div>
+
+
+              </div>
+
+            </div>
 
           </div>
 
 
-          {/* VIDEO */}
+          {/* ===========================
+              THƯ VIỆN ẢNH
+          =========================== */}
 
-          <h2>🎥 Video</h2>
+          <h2>
+            📸 Thư viện ảnh
+          </h2>
 
-          <a
-            href={item.video}
-            target="_blank"
-            rel="noreferrer"
-          >
-            ▶ Xem Video
-          </a>
+          <div className="gallery">
 
+            {item.gallery.map(
+              (img, index) => (
 
-          {/* GOOGLE MAPS */}
+                <img
+                  key={index}
+                  src={img}
+                  alt={`Ảnh ${index + 1}`}
+                  onClick={() =>
+                    openLightbox(index)
+                  }
+                />
 
-          <h2>🗺 Google Maps</h2>
+              )
+            )}
 
-          <iframe
-            src={item.map}
-            width="100%"
-            height="450"
-            style={{
-              border: 0,
-              borderRadius: "12px",
-              marginTop: "15px",
-            }}
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Google Maps"
-          >
-          </iframe>
+          </div>
 
 
-          {/* CHỈ ĐƯỜNG */}
-
-          <br />
-          <br />
-
-          <a
-            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-              item.diachi
-            )}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-
-            <button className="btn-back">
-              📍 Chỉ đường đến đây
-            </button>
-
-          </a>
-
-
-          {/* QR */}
-
-          <h2>📱 Mã QR</h2>
-
-          <img
-            src={item.qr}
-            alt="QR Code"
-            width="220"
-          />
-
-          <br />
-          <br />
-
-
-          {/* QUAY LẠI */}
+          {/* ===========================
+              QUAY LẠI
+          =========================== */}
 
           <button
             className="btn-back"
@@ -218,12 +326,15 @@ function ChiTiet() {
             ⬅ Quay lại Trang chủ
           </button>
 
+
         </div>
 
       </div>
 
 
-      {/* LIGHTBOX */}
+      {/* ===========================
+          LIGHTBOX
+      =========================== */}
 
       {lightboxOpen && (
 
