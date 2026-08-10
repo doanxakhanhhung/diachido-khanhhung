@@ -15,6 +15,7 @@ import BanDo from "./pages/BanDo";
 import ThuVien from "./pages/ThuVien";
 import Video from "./pages/Video";
 import ChiTiet from "./pages/ChiTiet";
+import BackToTop from "./components/BackToTop";
 
 
 // ===========================
@@ -45,6 +46,7 @@ function ScrollToTop() {
 
 function App() {
 
+
   // ===========================
   // AOS
   // ===========================
@@ -64,8 +66,18 @@ function App() {
 
     <>
 
-      {/* Tự động đưa trang lên đầu khi chuyển trang */}
+      {/* ===========================
+          TỰ ĐỘNG CUỘN LÊN ĐẦU
+      =========================== */}
+
       <ScrollToTop />
+
+
+      {/* ===========================
+          NÚT BACK TO TOP
+      =========================== */}
+
+      <BackToTop />
 
 
       {/* ===========================
@@ -111,5 +123,6 @@ function App() {
   );
 
 }
+
 
 export default App;
