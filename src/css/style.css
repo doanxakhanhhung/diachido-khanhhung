@@ -2268,4 +2268,202 @@ footer{
     }
 
 }
+/* ===========================
+   THÔNG TIN NHANH
+=========================== */
+
+.detail-quick-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin: 25px 0 35px;
+}
+
+.quick-info-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    background: #f8fbff;
+
+    border: 1px solid #e2edf8;
+
+    border-radius: 14px;
+
+    transition: .3s;
+}
+
+.quick-info-item:hover {
+    transform: translateY(-3px);
+
+    background: #f1f7ff;
+
+    box-shadow:
+        0 8px 20px rgba(0,84,166,.10);
+}
+
+.quick-info-icon {
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #0054a6;
+
+    color: #fff;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+}
+
+.quick-info-text strong {
+    display: block;
+
+    color: #0054a6;
+
+    font-size: 15px;
+
+    margin-bottom: 3px;
+}
+
+.quick-info-text span {
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .detail-quick-info {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        margin: 20px 0 25px;
+    }
+
+    .quick-info-item {
+        padding: 14px;
+    }
+
+}
+/* ===========================
+   NÚT CHIA SẺ
+=========================== */
+
+.detail-share {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin: 0 0 30px;
+
+    padding: 16px 20px;
+
+    background: #f8fbff;
+
+    border: 1px solid #e2edf8;
+
+    border-radius: 14px;
+}
+
+.detail-share-title {
+    color: #0054a6;
+
+    font-weight: 600;
+
+    font-size: 15px;
+}
+
+.detail-share-buttons {
+    display: flex;
+
+    gap: 10px;
+}
+
+.share-btn {
+    border: none;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+}
+
+.share-btn.share {
+    background: #0054a6;
+
+    color: #fff;
+}
+
+.share-btn.copy {
+    background: #e8f2ff;
+
+    color: #0054a6;
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .detail-share {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        text-align: center;
+
+        padding: 15px;
+    }
+
+    .detail-share-buttons {
+        justify-content: center;
+    }
+
+    .share-btn {
+        flex: 1;
+
+        padding: 12px 10px;
+    }
+
+}
 }
