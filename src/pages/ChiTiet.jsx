@@ -294,20 +294,26 @@ function ChiTiet() {
 
           <div className="gallery">
 
-            {item.gallery.map(
-              (img, index) => (
+            {item.gallery.map((img, index) => (
 
-                <img
-                  key={index}
-                  src={img}
-                  alt={`Ảnh ${index + 1}`}
-                  onClick={() =>
-                    openLightbox(index)
-                  }
-                />
+    <div
+      className="gallery-item"
+      key={index}
+      onClick={() => openLightbox(index)}
+    >
 
-              )
-            )}
+      <img
+        src={img}
+        alt={`Ảnh ${index + 1}`}
+      />
+
+      <div className="gallery-overlay">
+        🔍 Xem ảnh
+      </div>
+
+    </div>
+
+  ))}
 
           </div>
 
