@@ -382,32 +382,6 @@ function ChiTiet() {
               </div>
 
 
-              {/* ===========================
-                  VIDEO
-              =========================== */}
-
-              <div className="detail-section">
-
-                <h2>
-                  🎥 Video
-                </h2>
-
-                <p>
-                  Xem video giới thiệu về địa chỉ đỏ:
-                </p>
-
-                <a
-                  href={item.video}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-
-                  ▶ Xem Video
-
-                </a>
-
-              </div>
-
 
             </div>
 
