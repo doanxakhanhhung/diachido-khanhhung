@@ -5,9 +5,7 @@ function About() {
 
         <h2 className="about-title">
           <span>🇻🇳</span>
-          <i></i>
           ĐỊA CHỈ ĐỎ XÃ KHÁNH HƯNG
-          <i></i>
           <span>🇻🇳</span>
         </h2>
 
