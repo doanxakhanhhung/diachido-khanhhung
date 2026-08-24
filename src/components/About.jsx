@@ -3,7 +3,13 @@ function About() {
     <section className="about">
       <div className="about-container">
 
-        <h2>ĐỊA CHỈ ĐỎ XÃ KHÁNH HƯNG</h2>
+        <h2 className="about-title">
+          <span>🇻🇳</span>
+          <i></i>
+          ĐỊA CHỈ ĐỎ XÃ KHÁNH HƯNG
+          <i></i>
+          <span>🇻🇳</span>
+        </h2>
 
         <p>
           Địa chỉ đỏ xã Khánh Hưng là nơi kết nối lịch sử với thế hệ hôm nay,
