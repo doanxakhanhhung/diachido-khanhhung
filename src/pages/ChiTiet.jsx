@@ -15,11 +15,13 @@ function ChiTiet() {
 
   const item = diaChiDo.find((x) => x.id == id);
 
+
   // ===========================
   // KHÔNG TÌM THẤY ĐỊA CHỈ
   // ===========================
 
   if (!item) {
+
     return (
       <div className="detail-container">
 
@@ -40,6 +42,7 @@ function ChiTiet() {
 
       </div>
     );
+
   }
 
 
@@ -91,12 +94,14 @@ function ChiTiet() {
   const sharePage = async () => {
 
     const shareData = {
+
       title: item.ten,
 
       text:
         `Khám phá ${item.ten} - Địa chỉ đỏ xã Khánh Hưng`,
 
       url: window.location.href,
+
     };
 
 
@@ -112,7 +117,11 @@ function ChiTiet() {
           window.location.href
         );
 
-        alert("Đã sao chép liên kết!");
+        setToast("Đã sao chép liên kết!");
+
+        setTimeout(() => {
+          setToast("");
+        }, 2000);
 
       }
 
@@ -159,6 +168,10 @@ function ChiTiet() {
   };
 
 
+  // ===========================
+  // GIAO DIỆN
+  // ===========================
+
   return (
 
     <>
@@ -193,7 +206,6 @@ function ChiTiet() {
               {item.ten}
             </h1>
 
-
             <div className="detail-address">
 
               📍 {item.diachi}
@@ -220,9 +232,7 @@ function ChiTiet() {
             <div className="detail-info">
 
 
-              {/* ===========================
-                  GIỚI THIỆU
-              =========================== */}
+              {/* GIỚI THIỆU */}
 
               <div className="detail-section">
 
@@ -237,9 +247,7 @@ function ChiTiet() {
               </div>
 
 
-              {/* ===========================
-                  LỊCH SỬ
-              =========================== */}
+              {/* LỊCH SỬ */}
 
               <div className="detail-section">
 
@@ -254,9 +262,7 @@ function ChiTiet() {
               </div>
 
 
-              {/* ===========================
-                  Ý NGHĨA
-              =========================== */}
+              {/* Ý NGHĨA */}
 
               <div className="detail-section">
 
@@ -280,13 +286,10 @@ function ChiTiet() {
 
             <div className="detail-map">
 
-
               <div className="detail-map-box">
 
 
-                {/* ===========================
-                    GOOGLE MAP
-                =========================== */}
+                {/* GOOGLE MAP */}
 
                 <h2>
                   🗺 Vị trí
@@ -310,9 +313,7 @@ function ChiTiet() {
                 </iframe>
 
 
-                {/* ===========================
-                    CHỈ ĐƯỜNG
-                =========================== */}
+                {/* CHỈ ĐƯỜNG */}
 
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -335,47 +336,14 @@ function ChiTiet() {
 
             </div>
 
-
           </div>
 
 
           {/* ===========================
-              TƯ LIỆU HÌNH ẢNH
-          =========================== */}
-
-          <div className="detail-quick-info">
-
-
-            <div className="quick-info-item">
-
-              <div className="quick-info-icon">
-                📸
-              </div>
-
-              <div className="quick-info-text">
-
-                <strong>
-                  Tư liệu hình ảnh
-                </strong>
-
-                <span>
-                  {item.gallery?.length || 0} hình ảnh
-                </span>
-
-              </div>
-
-            </div>
-
-
-          </div>
-
-
-          {/* ===========================
-              CHIA SẺ
+              CHIA SẺ ĐỊA CHỈ ĐỎ
           =========================== */}
 
           <div className="detail-share">
-
 
             <div className="detail-share-title">
 
@@ -409,6 +377,35 @@ function ChiTiet() {
 
             </div>
 
+          </div>
+
+
+          {/* ===========================
+              TƯ LIỆU HÌNH ẢNH
+          =========================== */}
+
+          <div className="detail-quick-info">
+
+            <div className="quick-info-item">
+
+              <div className="quick-info-icon">
+                📸
+              </div>
+
+
+              <div className="quick-info-text">
+
+                <strong>
+                  Tư liệu hình ảnh
+                </strong>
+
+                <span>
+                  {item.gallery?.length || 0} hình ảnh
+                </span>
+
+              </div>
+
+            </div>
 
           </div>
 
@@ -428,7 +425,7 @@ function ChiTiet() {
           <div className="gallery">
 
 
-            {item.gallery.map((img, index) => (
+            {item.gallery?.map((img, index) => (
 
               <div
                 className="gallery-item"
@@ -495,7 +492,7 @@ function ChiTiet() {
 
 
       {/* ===========================
-          THÔNG BÁO SAO CHÉP
+          THÔNG BÁO
       =========================== */}
 
       {toast && (
@@ -519,5 +516,6 @@ function ChiTiet() {
   );
 
 }
+
 
 export default ChiTiet;
