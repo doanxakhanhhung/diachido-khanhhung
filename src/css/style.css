@@ -2719,6 +2719,17 @@ footer{
   line-height: 1.8;
   text-align: center;
 }
+.about {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
 }
 }
