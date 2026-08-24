@@ -266,7 +266,7 @@ function ChiTiet() {
 
 
     <a
-      href="/documents/DanhSachLietSiGoChauMai.pdf"
+      href={item.pdf}
       target="_blank"
       rel="noreferrer"
       className="document-button"
