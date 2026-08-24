@@ -2697,6 +2697,28 @@ footer{
         font-size: 21px;
 
     }
+    .about {
+  width: 100%;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-container p {
+  margin: 0 auto;
+  max-width: 800px;
+  line-height: 1.8;
+  text-align: center;
+}
 
 }
 }
