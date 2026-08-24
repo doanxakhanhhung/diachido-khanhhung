@@ -2,7 +2,17 @@ function About() {
   return (
     <section className="about">
       <div className="about-container">
-        <h2>     Địa chỉ đỏ xã Khánh Hưng là nơi lưu giữ những dấu ấn lịch sử, truyền thống cách mạng và những giá trị thiêng liêng của quê hương. Đây là không gian để thế hệ hôm nay tìm hiểu, tưởng nhớ và tri ân các anh hùng liệt sĩ, những người đã cống hiến, hy sinh vì độc lập, tự do của Tổ quốc. Thông qua việc số hóa và giới thiệu các địa chỉ đỏ, hình ảnh, tư liệu lịch sử, website góp phần giáo dục truyền thống yêu nước, bồi đắp niềm tự hào quê hương và lan tỏa những giá trị lịch sử đến đoàn viên, thanh thiếu nhi và Nhân dân xã Khánh Hưng.</h2>
+
+        <h2>ĐỊA CHỈ ĐỎ XÃ KHÁNH HƯNG</h2>
+
+        <p>
+          Địa chỉ đỏ xã Khánh Hưng là nơi kết nối lịch sử với thế hệ hôm nay,
+          giới thiệu những địa danh, công trình và dấu tích gắn liền với truyền
+          thống cách mạng của quê hương. Website góp phần số hóa tư liệu, lưu
+          giữ ký ức lịch sử, tri ân các thế hệ đi trước và giáo dục truyền thống
+          yêu nước cho đoàn viên, thanh thiếu nhi và Nhân dân.
+        </p>
+
       </div>
     </section>
   );
