@@ -46,7 +46,6 @@ function ChiTiet() {
   const openLightbox = (index) => {
 
     setCurrentImage(index);
-
     setLightboxOpen(true);
 
   };
@@ -108,7 +107,11 @@ function ChiTiet() {
           window.location.href
         );
 
-        alert("Đã sao chép liên kết!");
+        setToast("Đã sao chép liên kết!");
+
+        setTimeout(() => {
+          setToast("");
+        }, 2000);
 
       }
 
@@ -132,23 +135,76 @@ function ChiTiet() {
 
     try {
 
-    await navigator.clipboard.writeText(
-      window.location.href
+      await navigator.clipboard.writeText(
+        window.location.href
+      );
+
+      setToast("Đã sao chép liên kết!");
+
+      setTimeout(() => {
+        setToast("");
+      }, 2000);
+
+    } catch (error) {
+
+      setToast("Không thể sao chép liên kết.");
+
+      setTimeout(() => {
+        setToast("");
+      }, 2500);
+
+    }
+
+  };
+
+
+  // ===========================
+  // SAO CHÉP ĐỊA CHỈ
+  // ===========================
+
+  const copyAddress = async () => {
+
+    try {
+
+      await navigator.clipboard.writeText(
+        item.diachi
+      );
+
+      setToast("Đã sao chép địa chỉ!");
+
+      setTimeout(() => {
+        setToast("");
+      }, 2000);
+
+    } catch (error) {
+
+      setToast("Không thể sao chép địa chỉ.");
+
+      setTimeout(() => {
+        setToast("");
+      }, 2500);
+
+    }
+
+  };
+
+
+  // ===========================
+  // CUỘN ĐẾN THƯ VIỆN ẢNH
+  // ===========================
+
+  const scrollToGallery = () => {
+
+    const gallery = document.querySelector(
+      ".gallery"
     );
 
-    setToast("Đã sao chép liên kết!");
+    if (gallery) {
 
-    setTimeout(() => {
-      setToast("");
-    }, 2000);
-
-  } catch (error) {
-
-    setToast("Không thể sao chép liên kết.");
-
-    setTimeout(() => {
-      setToast("");
-    }, 2500);
+      gallery.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
 
     }
 
@@ -163,7 +219,6 @@ function ChiTiet() {
         className="detail-container"
         data-aos="fade-up"
       >
-
 
         {/* ===========================
             ẢNH ĐẠI DIỆN
@@ -189,11 +244,8 @@ function ChiTiet() {
               {item.ten}
             </h1>
 
-
             <div className="detail-address">
-
               📍 {item.diachi}
-
             </div>
 
           </div>
@@ -204,10 +256,6 @@ function ChiTiet() {
           =========================== */}
 
           <div className="detail-quick-info">
-
-
-            
-            {/* HÌNH ẢNH */}
 
             <div className="quick-info-item">
 
@@ -229,8 +277,6 @@ function ChiTiet() {
 
             </div>
 
-
-            
           </div>
 
 
@@ -240,24 +286,18 @@ function ChiTiet() {
 
           <div className="detail-share">
 
-
             <div className="detail-share-title">
-
               📤 Chia sẻ địa chỉ đỏ
-
             </div>
 
 
             <div className="detail-share-buttons">
 
-
               <button
                 className="share-btn share"
                 onClick={sharePage}
               >
-
                 📤 Chia sẻ
-
               </button>
 
 
@@ -265,11 +305,8 @@ function ChiTiet() {
                 className="share-btn copy"
                 onClick={copyLink}
               >
-
                 📋 Sao chép liên kết
-
               </button>
-
 
             </div>
 
@@ -337,8 +374,6 @@ function ChiTiet() {
 
               </div>
 
-
-
             </div>
 
 
@@ -348,11 +383,36 @@ function ChiTiet() {
 
             <div className="detail-map">
 
-
               <div className="detail-map-box">
 
 
-                {/* GOOGLE MAP */}
+                {/* ===========================
+                    TƯ LIỆU HÌNH ẢNH
+                =========================== */}
+
+                <button
+                  className="detail-map-action"
+                  onClick={scrollToGallery}
+                >
+                  📸 Tư liệu hình ảnh
+                </button>
+
+
+                {/* ===========================
+                    SAO CHÉP ĐỊA CHỈ
+                =========================== */}
+
+                <button
+                  className="detail-map-action"
+                  onClick={copyAddress}
+                >
+                  📋 Sao chép địa chỉ
+                </button>
+
+
+                {/* ===========================
+                    GOOGLE MAP
+                =========================== */}
 
                 <h2>
                   🗺 Vị trí
@@ -376,7 +436,9 @@ function ChiTiet() {
                 </iframe>
 
 
-                {/* CHỈ ĐƯỜNG */}
+                {/* ===========================
+                    CHỈ ĐƯỜNG
+                =========================== */}
 
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -395,7 +457,6 @@ function ChiTiet() {
                 </a>
 
 
-               
               </div>
 
             </div>
@@ -480,21 +541,27 @@ function ChiTiet() {
         />
 
       )}
+
+
+      {/* ===========================
+          TOAST
+      =========================== */}
+
       {toast && (
 
-  <div className="toast-message">
+        <div className="toast-message">
 
-    <span className="toast-icon">
-      ✓
-    </span>
+          <span className="toast-icon">
+            ✓
+          </span>
 
-    <span>
-      {toast}
-    </span>
+          <span>
+            {toast}
+          </span>
 
-  </div>
+        </div>
 
-)}
+      )}
 
     </>
 
