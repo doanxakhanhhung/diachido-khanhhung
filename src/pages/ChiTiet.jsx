@@ -271,7 +271,7 @@ function ChiTiet() {
       rel="noreferrer"
       className="document-button"
     >
-      📖 Ấn Xem danh sách liệt sĩ
+      📖 Ấn Xem danh sách Anh hùng liệt sĩ
     </a>
 
   </div>
