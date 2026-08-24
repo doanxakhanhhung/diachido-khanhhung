@@ -465,26 +465,7 @@ function ChiTiet() {
                 </a>
 
 
-                {/* QR */}
-
-                <div className="detail-qr">
-
-                  <h2>
-                    📱 Mã QR
-                  </h2>
-
-                  <p>
-                    Quét mã QR để truy cập thông tin.
-                  </p>
-
-                  <img
-                    src={item.qr}
-                    alt="QR Code"
-                  />
-
-                </div>
-
-
+               
               </div>
 
             </div>
