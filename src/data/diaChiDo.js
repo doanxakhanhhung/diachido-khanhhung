@@ -2,16 +2,28 @@ import goChauMaiBanner from "../assets/images/go-chau-mai/banner.jpg";
 import goChauMai1 from "../assets/images/go-chau-mai/1.jpg";
 import goChauMai2 from "../assets/images/go-chau-mai/2.jpg";
 import goChauMai3 from "../assets/images/go-chau-mai/3.jpg";
+import goChauMai4 from "../assets/images/go-chau-mai/4.jpg";
+import goChauMai5 from "../assets/images/go-chau-mai/5.jpg";
+import goChauMai6 from "../assets/images/go-chau-mai/6.jpg";
+import goChauMai7 from "../assets/images/go-chau-mai/7.jpg";
 
 import benPhoBanner from "../assets/images/ben-pho/banner.jpg";
 import benPho1 from "../assets/images/ben-pho/1.jpg";
 import benPho2 from "../assets/images/ben-pho/2.jpg";
 import benPho3 from "../assets/images/ben-pho/3.jpg";
+import benPho4 from "../assets/images/ben-pho/4.jpg";
+import benPho5 from "../assets/images/ben-pho/5.jpg";
+import benPho6 from "../assets/images/ben-pho/6.jpg";
+import benPho7 from "../assets/images/ben-pho/7.jpg";
 
 import thaiTriBanner from "../assets/images/thai-tri/banner.jpg";
 import thaiTri1 from "../assets/images/thai-tri/1.jpg";
 import thaiTri2 from "../assets/images/thai-tri/2.jpg";
 import thaiTri3 from "../assets/images/thai-tri/3.jpg";
+import thaiTri4 from "../assets/images/thai-tri/4.jpg";
+import thaiTri5 from "../assets/images/thai-tri/5.jpg";
+import thaiTri6 from "../assets/images/thai-tri/6.jpg";
+import thaiTri7 from "../assets/images/thai-tri/7.jpg";
 
 const diaChiDo = [
   {
@@ -39,7 +51,11 @@ const diaChiDo = [
     gallery: [
       goChauMai1,
       goChauMai2,
-      goChauMai3
+      goChauMai3,
+      goChauMai4,
+      goChauMai5,
+      goChauMai6,
+      goChauMai7
     ]
   },
 
@@ -69,7 +85,11 @@ const diaChiDo = [
     gallery: [
       benPho1,
       benPho2,
-      benPho3
+      benPho3,
+      benPho4,
+      benPho5,
+      benPho6,
+      benPho7
     ]
   },
 
@@ -99,7 +119,11 @@ const diaChiDo = [
     gallery: [
       thaiTri1,
       thaiTri2,
-      thaiTri3
+      thaiTri3,
+      thaiTri4,
+      thaiTri5,
+      thaiTri6,
+      thaiTri7
     ]
   }
 ];
