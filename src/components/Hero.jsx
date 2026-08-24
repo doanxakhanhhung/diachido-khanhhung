@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 import banner1 from "../assets/images/banner/banner1.jpg";
 import banner2 from "../assets/images/banner/banner2.jpg";
 import banner3 from "../assets/images/banner/banner3.jpg";
+import banner4 from "../assets/images/banner/banner4.jpg";
+import banner5 from "../assets/images/banner/banner5.jpg";
+import banner6 from "../assets/images/banner/banner6.jpg";
+import banner7 from "../assets/images/banner/banner7.jpg";
 
 function Hero() {
 
@@ -10,6 +14,10 @@ function Hero() {
     banner1,
     banner2,
     banner3,
+    banner4,
+    banner5,
+    banner6,
+    banner7,
   ];
 
   const [current, setCurrent] = useState(0);
