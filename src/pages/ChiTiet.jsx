@@ -264,9 +264,6 @@ function ChiTiet() {
 
   <div className="historical-document">
 
-    <h3>
-      📄 Danh sách các liệt sĩ
-    </h3>
 
     <a
       href="/documents/DanhSachLietSiGoChauMai.pdf"
@@ -274,7 +271,7 @@ function ChiTiet() {
       rel="noreferrer"
       className="document-button"
     >
-      📖 Xem danh sách liệt sĩ
+      📖 Ấn Xem danh sách liệt sĩ
     </a>
 
   </div>
