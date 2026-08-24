@@ -15,6 +15,10 @@ function ChiTiet() {
 
   const item = diaChiDo.find((x) => x.id == id);
 
+  // ===========================
+  // KHÔNG TÌM THẤY ĐỊA CHỈ
+  // ===========================
+
   if (!item) {
     return (
       <div className="detail-container">
@@ -132,23 +136,23 @@ function ChiTiet() {
 
     try {
 
-    await navigator.clipboard.writeText(
-      window.location.href
-    );
+      await navigator.clipboard.writeText(
+        window.location.href
+      );
 
-    setToast("Đã sao chép liên kết!");
+      setToast("Đã sao chép liên kết!");
 
-    setTimeout(() => {
-      setToast("");
-    }, 2000);
+      setTimeout(() => {
+        setToast("");
+      }, 2000);
 
-  } catch (error) {
+    } catch (error) {
 
-    setToast("Không thể sao chép liên kết.");
+      setToast("Không thể sao chép liên kết.");
 
-    setTimeout(() => {
-      setToast("");
-    }, 2500);
+      setTimeout(() => {
+        setToast("");
+      }, 2500);
 
     }
 
@@ -199,15 +203,148 @@ function ChiTiet() {
           </div>
 
 
+          <hr />
+
+
           {/* ===========================
-              THÔNG TIN NHANH
+              BỐ CỤC 2 CỘT
+          =========================== */}
+
+          <div className="detail-two-column">
+
+
+            {/* ===========================
+                CỘT TRÁI
+            =========================== */}
+
+            <div className="detail-info">
+
+
+              {/* ===========================
+                  GIỚI THIỆU
+              =========================== */}
+
+              <div className="detail-section">
+
+                <h2>
+                  📖 Giới thiệu
+                </h2>
+
+                <p>
+                  {item.mota}
+                </p>
+
+              </div>
+
+
+              {/* ===========================
+                  LỊCH SỬ
+              =========================== */}
+
+              <div className="detail-section">
+
+                <h2>
+                  📜 Lịch sử
+                </h2>
+
+                <p>
+                  {item.lichsu}
+                </p>
+
+              </div>
+
+
+              {/* ===========================
+                  Ý NGHĨA
+              =========================== */}
+
+              <div className="detail-section">
+
+                <h2>
+                  ⭐ Ý nghĩa giáo dục
+                </h2>
+
+                <p>
+                  {item.ynghia}
+                </p>
+
+              </div>
+
+
+            </div>
+
+
+            {/* ===========================
+                CỘT PHẢI
+            =========================== */}
+
+            <div className="detail-map">
+
+
+              <div className="detail-map-box">
+
+
+                {/* ===========================
+                    GOOGLE MAP
+                =========================== */}
+
+                <h2>
+                  🗺 Vị trí
+                </h2>
+
+
+                <iframe
+                  src={item.map}
+                  width="100%"
+                  height="350"
+                  style={{
+                    border: 0,
+                    borderRadius: "12px",
+                    marginTop: "10px",
+                  }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Maps"
+                >
+                </iframe>
+
+
+                {/* ===========================
+                    CHỈ ĐƯỜNG
+                =========================== */}
+
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    item.diachi
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+
+                  <button className="btn-back">
+
+                    📍 Chỉ đường đến đây
+
+                  </button>
+
+                </a>
+
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          {/* ===========================
+              TƯ LIỆU HÌNH ẢNH
           =========================== */}
 
           <div className="detail-quick-info">
 
-
-            
-            {/* HÌNH ẢNH */}
 
             <div className="quick-info-item">
 
@@ -218,7 +355,7 @@ function ChiTiet() {
               <div className="quick-info-text">
 
                 <strong>
-                  Tư liệu
+                  Tư liệu hình ảnh
                 </strong>
 
                 <span>
@@ -230,7 +367,6 @@ function ChiTiet() {
             </div>
 
 
-            
           </div>
 
 
@@ -273,135 +409,11 @@ function ChiTiet() {
 
             </div>
 
+
           </div>
 
 
           <hr />
-
-
-          {/* ===========================
-              BỐ CỤC 2 CỘT
-          =========================== */}
-
-          <div className="detail-two-column">
-
-
-            {/* ===========================
-                CỘT TRÁI
-            =========================== */}
-
-            <div className="detail-info">
-
-
-              {/* GIỚI THIỆU */}
-
-              <div className="detail-section">
-
-                <h2>
-                  📖 Giới thiệu
-                </h2>
-
-                <p>
-                  {item.mota}
-                </p>
-
-              </div>
-
-
-              {/* LỊCH SỬ */}
-
-              <div className="detail-section">
-
-                <h2>
-                  📜 Lịch sử
-                </h2>
-
-                <p>
-                  {item.lichsu}
-                </p>
-
-              </div>
-
-
-              {/* Ý NGHĨA */}
-
-              <div className="detail-section">
-
-                <h2>
-                  ⭐ Ý nghĩa giáo dục
-                </h2>
-
-                <p>
-                  {item.ynghia}
-                </p>
-
-              </div>
-
-
-
-            </div>
-
-
-            {/* ===========================
-                CỘT PHẢI
-            =========================== */}
-
-            <div className="detail-map">
-
-
-              <div className="detail-map-box">
-
-
-                {/* GOOGLE MAP */}
-
-                <h2>
-                  🗺 Vị trí
-                </h2>
-
-
-                <iframe
-                  src={item.map}
-                  width="100%"
-                  height="350"
-                  style={{
-                    border: 0,
-                    borderRadius: "12px",
-                    marginTop: "10px",
-                  }}
-                  loading="lazy"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Google Maps"
-                >
-                </iframe>
-
-
-                {/* CHỈ ĐƯỜNG */}
-
-                <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                    item.diachi
-                  )}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-
-                  <button className="btn-back">
-
-                    📍 Chỉ đường đến đây
-
-                  </button>
-
-                </a>
-
-
-               
-              </div>
-
-            </div>
-
-
-          </div>
 
 
           {/* ===========================
@@ -480,21 +492,27 @@ function ChiTiet() {
         />
 
       )}
+
+
+      {/* ===========================
+          THÔNG BÁO SAO CHÉP
+      =========================== */}
+
       {toast && (
 
-  <div className="toast-message">
+        <div className="toast-message">
 
-    <span className="toast-icon">
-      ✓
-    </span>
+          <span className="toast-icon">
+            ✓
+          </span>
 
-    <span>
-      {toast}
-    </span>
+          <span>
+            {toast}
+          </span>
 
-  </div>
+        </div>
 
-)}
+      )}
 
     </>
 
