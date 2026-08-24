@@ -248,53 +248,43 @@ function ChiTiet() {
 
 
               {/* ===========================
-                  TƯ LIỆU LỊCH SỬ
-              =========================== */}
+    TƯ LIỆU LỊCH SỬ
+=========================== */}
 
-              <div className="detail-section">
+<div className="detail-section">
 
-                <h2>
-                  📜 Tư liệu lịch sử
-                </h2>
+  <h2>
+    📜 Tư liệu lịch sử
+  </h2>
 
-                <p>
-                  {item.lichsu}
-                </p>
+  <p>
+    {item.lichsu}
+  </p>
 
+  <div className="historical-document">
 
-                {/* ===========================
-                    FILE PDF
-                =========================== */}
+    <a
+      href={item.pdf}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="document-button"
+    >
+      📖 Xem danh sách Anh hùng liệt sĩ
+    </a>
 
-                {item.pdf && (
+    <p
+      style={{
+        fontSize: "12px",
+        color: "#777",
+        marginTop: "8px",
+      }}
+    >
+      Đường dẫn PDF: {item.pdf || "KHÔNG CÓ ĐƯỜNG DẪN PDF"}
+    </p>
 
-                  <div className="historical-document">
+  </div>
 
-                    <a
-                      href={item.pdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="document-button"
-                    >
-                      📖 Xem danh sách Anh hùng liệt sĩ
-                    </a>
-
-
-                    {/* HIỂN THỊ ĐƯỜNG DẪN ĐỂ KIỂM TRA */}
-
-                    <p
-                      style={{
-                        fontSize: "12px",
-                        color: "#777",
-                        marginTop: "8px",
-                      }}
-                    >
-                      Tài liệu: {item.pdf}
-                    </p>
-
-                  </div>
-
-                )}
+                
 
               </div>
 
