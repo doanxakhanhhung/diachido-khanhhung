@@ -2730,6 +2730,38 @@ footer{
   margin: 0 auto;
   box-sizing: border-box;
 }
+.about-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.about-title span {
+  font-size: 24px;
+}
+
+.about-title i {
+  width: 60px;
+  height: 2px;
+  background: #c9a227;
+  display: block;
+}
+@media (max-width: 768px) {
+  .about-title {
+    gap: 6px;
+    font-size: 20px;
+  }
+
+  .about-title span {
+    font-size: 18px;
+  }
+
+  .about-title i {
+    width: 20px;
+  }
+}
 
 }
 }
