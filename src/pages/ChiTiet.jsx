@@ -268,7 +268,7 @@ function ChiTiet() {
     <a
       href={item.pdf}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       className="document-button"
     >
       📖 Ấn Xem danh sách Anh hùng liệt sĩ
