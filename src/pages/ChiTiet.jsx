@@ -252,7 +252,7 @@ function ChiTiet() {
               <div className="detail-section">
 
                 <h2>
-                  📜 Lịch sử
+                  📜 Danh sách các Anh hùng Liệt sĩ
                 </h2>
 
                 <p>
