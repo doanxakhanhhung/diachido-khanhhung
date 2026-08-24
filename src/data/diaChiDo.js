@@ -32,10 +32,10 @@ const diaChiDo = [
     diachi: "Ấp Gò Châu Mai, xã Khánh Hưng, tỉnh Tây Ninh",
 
     mota:
-      "Đây là nơi ghi danh các anh hùng liệt sĩ đã hy sinh trong sự nghiệp đấu tranh giải phóng dân tộc.",
+      "Nhà bia ghi danh 25 anh hùng liệt sĩ đã hy sinh trong sự nghiệp đấu tranh giải phóng dân tộc. Công trình được xây dựng nhằm tưởng nhớ công lao to lớn của các anh hùng liệt sĩ quê hương Khánh Hưng.",
 
-    lichsu:
-      "Công trình được xây dựng nhằm tưởng nhớ công lao to lớn của các anh hùng liệt sĩ quê hương Khánh Hưng.",
+    danhsachcacanhhung:
+      "Ấn để xem danh sách 25 anh hùng liệt sĩ",
 
     ynghia:
       "Là địa chỉ đỏ giáo dục truyền thống yêu nước cho đoàn viên, thanh niên và học sinh.",
