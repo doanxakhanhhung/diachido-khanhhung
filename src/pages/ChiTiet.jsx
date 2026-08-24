@@ -247,20 +247,39 @@ function ChiTiet() {
               </div>
 
 
-              {/* LỊCH SỬ */}
+              {/* ===========================
+    TƯ LIỆU LỊCH SỬ
+=========================== */}
 
-              <div className="detail-section">
+<div className="detail-section">
 
-                <h2>
-                  📜 Danh sách các Anh hùng Liệt sĩ
-                </h2>
+  <h2>
+    📜 Tư liệu lịch sử
+  </h2>
 
-                <p>
-                  {item.lichsu}
-                </p>
+  <p>
+    {item.lichsu}
+  </p>
 
-              </div>
 
+  <div className="historical-document">
+
+    <h3>
+      📄 Danh sách các liệt sĩ
+    </h3>
+
+    <a
+      href="/documents/DanhSachLietSiGoChauMai.pdf"
+      target="_blank"
+      rel="noreferrer"
+      className="document-button"
+    >
+      📖 Xem danh sách liệt sĩ
+    </a>
+
+  </div>
+
+</div>
 
               {/* Ý NGHĨA */}
 
