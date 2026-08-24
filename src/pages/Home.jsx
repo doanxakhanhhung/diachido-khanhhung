@@ -14,7 +14,6 @@ function Home() {
       <Hero />
       <Stats />
       <About />
-      <Menu />
       <DiaChiList />
       <Footer />
     </>
