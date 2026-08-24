@@ -44,8 +44,7 @@ const diaChiDo = [
 
     video: "https://youtube.com",
 
-    qr: "https://placehold.co/250x250?text=QR",
-
+   
     hinhanh: goChauMaiBanner,
 
     gallery: [
@@ -78,8 +77,7 @@ const diaChiDo = [
 
     video: "https://youtube.com",
 
-    qr: "https://placehold.co/250x250?text=QR",
-
+   
     hinhanh: benPhoBanner,
 
     gallery: [
@@ -112,8 +110,7 @@ const diaChiDo = [
 
     video: "https://youtube.com",
 
-    qr: "https://placehold.co/250x250?text=QR",
-
+    
     hinhanh: thaiTriBanner,
 
     gallery: [
