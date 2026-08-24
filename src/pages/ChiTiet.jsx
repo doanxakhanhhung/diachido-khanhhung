@@ -207,9 +207,7 @@ function ChiTiet() {
             </h1>
 
             <div className="detail-address">
-
               📍 {item.diachi}
-
             </div>
 
           </div>
@@ -232,7 +230,9 @@ function ChiTiet() {
             <div className="detail-info">
 
 
-              {/* GIỚI THIỆU */}
+              {/* ===========================
+                  GIỚI THIỆU
+              =========================== */}
 
               <div className="detail-section">
 
@@ -248,37 +248,60 @@ function ChiTiet() {
 
 
               {/* ===========================
-    TƯ LIỆU LỊCH SỬ
-=========================== */}
+                  TƯ LIỆU LỊCH SỬ
+              =========================== */}
 
-<div className="detail-section">
+              <div className="detail-section">
 
-  <h2>
-    📜 Tư liệu lịch sử
-  </h2>
+                <h2>
+                  📜 Tư liệu lịch sử
+                </h2>
 
-  <p>
-    {item.lichsu}
-  </p>
-
-
-  <div className="historical-document">
+                <p>
+                  {item.lichsu}
+                </p>
 
 
-    <a
-      href={item.pdf}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="document-button"
-    >
-      📖 Ấn Xem danh sách Anh hùng liệt sĩ
-    </a>
+                {/* ===========================
+                    FILE PDF
+                =========================== */}
 
-  </div>
+                {item.pdf && (
 
-</div>
+                  <div className="historical-document">
 
-              {/* Ý NGHĨA */}
+                    <a
+                      href={item.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="document-button"
+                    >
+                      📖 Xem danh sách Anh hùng liệt sĩ
+                    </a>
+
+
+                    {/* HIỂN THỊ ĐƯỜNG DẪN ĐỂ KIỂM TRA */}
+
+                    <p
+                      style={{
+                        fontSize: "12px",
+                        color: "#777",
+                        marginTop: "8px",
+                      }}
+                    >
+                      Tài liệu: {item.pdf}
+                    </p>
+
+                  </div>
+
+                )}
+
+              </div>
+
+
+              {/* ===========================
+                  Ý NGHĨA GIÁO DỤC
+              =========================== */}
 
               <div className="detail-section">
 
@@ -336,7 +359,7 @@ function ChiTiet() {
                     item.diachi
                   )}`}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
 
                   <button className="btn-back">
@@ -351,6 +374,7 @@ function ChiTiet() {
               </div>
 
             </div>
+
 
           </div>
 
@@ -440,7 +464,6 @@ function ChiTiet() {
 
           <div className="gallery">
 
-
             {item.gallery?.map((img, index) => (
 
               <div
@@ -466,7 +489,6 @@ function ChiTiet() {
               </div>
 
             ))}
-
 
           </div>
 
