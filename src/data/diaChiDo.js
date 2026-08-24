@@ -34,7 +34,7 @@ const diaChiDo = [
     mota:
       "Nhà bia ghi danh 25 anh hùng liệt sĩ đã hy sinh trong sự nghiệp đấu tranh giải phóng dân tộc. Công trình được xây dựng nhằm tưởng nhớ công lao to lớn của các anh hùng liệt sĩ quê hương Khánh Hưng.",
 
-    lichsu:
+    danhsachcacanhhunglietsi:
       "Ấn để xem danh sách 25 anh hùng liệt sĩ",
 
     ynghia:
