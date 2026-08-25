@@ -15,6 +15,16 @@ function ChiTiet() {
 
   const item = diaChiDo.find((x) => x.id == id);
 
+  // ===========================
+  // FILE PDF RIÊNG TỪNG ĐỊA CHỈ
+  // ===========================
+
+  const pdfUrl = {
+    1: "/documents/DanhSachLietSiGoChauMai.pdf",
+    2: "/documents/DanhSachLietSiBenPho.pdf",
+    3: "/documents/DanhSachLietSiThaiTri.pdf",
+  }[Number(id)];
+
 
   // ===========================
   // KHÔNG TÌM THẤY ĐỊA CHỈ
@@ -181,7 +191,6 @@ function ChiTiet() {
         data-aos="fade-up"
       >
 
-
         {/* ===========================
             ẢNH ĐẠI DIỆN
         =========================== */}
@@ -248,43 +257,43 @@ function ChiTiet() {
 
 
               {/* ===========================
-    TƯ LIỆU LỊCH SỬ
-=========================== */}
+                  TƯ LIỆU LỊCH SỬ
+              =========================== */}
 
-<div className="detail-section">
+              <div className="detail-section">
 
-  <h2>
-    📜 Tư liệu lịch sử
-  </h2>
+                <h2>
+                  📜 Tư liệu lịch sử
+                </h2>
 
-  <p>
-    {item.lichsu}
-  </p>
+                <p>
+                  {item.lichsu}
+                </p>
 
-  <div className="historical-document">
 
-    <a
-      href={item.pdf}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="document-button"
-    >
-      📖 Xem danh sách Anh hùng liệt sĩ
-    </a>
+                <div className="historical-document">
 
-    <p
-      style={{
-        fontSize: "12px",
-        color: "#777",
-        marginTop: "8px",
-      }}
-    >
-      Đường dẫn PDF: {item.pdf || "KHÔNG CÓ ĐƯỜNG DẪN PDF"}
-    </p>
+                  <a
+                    href={pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="document-button"
+                  >
+                    📖 Xem danh sách Anh hùng liệt sĩ
+                  </a>
 
-  </div>
 
-                
+                  <p
+                    style={{
+                      fontSize: "12px",
+                      color: "#777",
+                      marginTop: "8px",
+                    }}
+                  >
+                    Đường dẫn PDF: {pdfUrl}
+                  </p>
+
+                </div>
 
               </div>
 
@@ -384,7 +393,6 @@ function ChiTiet() {
 
             <div className="detail-share-buttons">
 
-
               <button
                 className="share-btn share"
                 onClick={sharePage}
@@ -403,7 +411,6 @@ function ChiTiet() {
                 📋 Sao chép liên kết
 
               </button>
-
 
             </div>
 
