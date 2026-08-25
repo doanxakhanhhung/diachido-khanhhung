@@ -283,16 +283,6 @@ function ChiTiet() {
                   </a>
 
 
-                  <p
-                    style={{
-                      fontSize: "12px",
-                      color: "#777",
-                      marginTop: "8px",
-                    }}
-                  >
-                    Đường dẫn PDF: {pdfUrl}
-                  </p>
-
                 </div>
 
               </div>
