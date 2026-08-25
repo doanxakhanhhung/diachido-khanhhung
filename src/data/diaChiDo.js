@@ -40,7 +40,7 @@ const diaChiDo = [
       "Nhà bia ghi danh 25 anh hùng liệt sĩ đã hy sinh trong sự nghiệp đấu tranh giải phóng dân tộc. Công trình được xây dựng nhằm tưởng nhớ công lao to lớn của các anh hùng liệt sĩ quê hương Khánh Hưng.",
 
     lichsu:
-      "  ",
+      "Danh sách ghi danh những Anh hùng Liệt sĩ là tư liệu nhằm ghi nhớ và tri ân những người con quê hương đã anh dũng hy sinh vì độc lập, tự do của Tổ quốc và quê hương Khánh Hưng.",
     pdf: "/documents/DanhSachLietSiGoChauMai.pdf",
 
     ynghia:
@@ -77,7 +77,7 @@ const diaChiDo = [
       "Nhà bia ghi danh 89 anh hùng liệt sĩ đã hy sinh trong sự nghiệp đấu tranh giải phóng dân tộc. Công trình được xây dựng nhằm tưởng nhớ công lao to lớn của các anh hùng liệt sĩ quê hương Khánh Hưng.",
     
     lichsu:
-      "  ",
+      "Danh sách ghi danh những Anh hùng Liệt sĩ là tư liệu nhằm ghi nhớ và tri ân những người con quê hương đã anh dũng hy sinh vì độc lập, tự do của Tổ quốc và quê hương Khánh Hưng.",
        pdf: "/documents/DanhSachLietSiBenPho.pdf",
     ynghia:
       "Là địa điểm sinh hoạt truyền thống của Đoàn Thanh niên, góp phần giáo dục lý tưởng cách mạng, bồi đắp lòng yêu nước, niềm tự hào dân tộc và ý thức trách nhiệm cho đoàn viên, thanh thiếu nhi; qua đó giúp thế hệ trẻ hiểu, trân trọng và phát huy truyền thống cách mạng của quê hương.",
@@ -108,7 +108,7 @@ const diaChiDo = [
       "Nhà bia ghi danh 15 anh hùng liệt sĩ đã hy sinh trong sự nghiệp đấu tranh giải phóng dân tộc. Công trình được xây dựng nhằm tưởng nhớ công lao to lớn của các anh hùng liệt sĩ quê hương Khánh Hưng.",
 
     lichsu:
-      "Xem danh sách các Anh hùng, Liệt sĩ – những người đã anh dũng hy sinh vì độc lập, tự do của Tổ quốc và quê hương Khánh Hưng.",
+      "Danh sách ghi danh những Anh hùng Liệt sĩ là tư liệu nhằm ghi nhớ và tri ân những người con quê hương đã anh dũng hy sinh vì độc lập, tự do của Tổ quốc và quê hương Khánh Hưng.",
     pdf: "/documents/DanhSachLietSiThaiTri.pdf",
     ynghia:
       "Là địa điểm sinh hoạt truyền thống của Đoàn Thanh niên, góp phần giáo dục lý tưởng cách mạng, bồi đắp lòng yêu nước, niềm tự hào dân tộc và ý thức trách nhiệm cho đoàn viên, thanh thiếu nhi; qua đó giúp thế hệ trẻ hiểu, trân trọng và phát huy truyền thống cách mạng của quê hương.",
