@@ -279,7 +279,7 @@ function ChiTiet() {
                     rel="noopener noreferrer"
                     className="document-button"
                   >
-                    📖 Xem danh sách Anh hùng liệt sĩ
+                    📖 Ấn để xem danh sách
                   </a>
 
 
