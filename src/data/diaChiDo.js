@@ -6,6 +6,11 @@ import goChauMai4 from "../assets/images/go-chau-mai/4.jpg";
 import goChauMai5 from "../assets/images/go-chau-mai/5.jpg";
 import goChauMai6 from "../assets/images/go-chau-mai/6.jpg";
 import goChauMai7 from "../assets/images/go-chau-mai/7.jpg";
+import goChauMai8 from "../assets/images/go-chau-mai/8.jpg";
+import goChauMai9 from "../assets/images/go-chau-mai/9.jpg";
+import goChauMai10 from "../assets/images/go-chau-mai/10.jpg";
+import goChauMai11 from "../assets/images/go-chau-mai/11.jpg";
+import goChauMai12 from "../assets/images/go-chau-mai/12.jpg";
 
 import benPhoBanner from "../assets/images/ben-pho/banner.jpg";
 import benPho1 from "../assets/images/ben-pho/1.jpg";
@@ -36,6 +41,7 @@ const diaChiDo = [
 
     lichsu:
       "  ",
+    pdf: "/documents/DanhSachLietSiGoChauMai.pdf",
 
     ynghia:
       "Là địa chỉ đỏ giáo dục truyền thống yêu nước cho đoàn viên, thanh niên và học sinh.",
@@ -52,7 +58,12 @@ const diaChiDo = [
       goChauMai4,
       goChauMai5,
       goChauMai6,
-      goChauMai7
+      goChauMai7,
+      goChauMai8,
+      goChauMai9,
+      goChauMai10,
+      goChauMai11,
+      goChauMai12
     ]
   },
 
@@ -64,7 +75,7 @@ const diaChiDo = [
 
     mota:
       "Địa điểm ghi danh các anh hùng liệt sĩ của địa phương.",
-
+    pdf: "/documents/DanhSachLietSiBenPho.pdf",
     lichsu:
       "Nhà bia được xây dựng nhằm tri ân những người đã hy sinh vì độc lập dân tộc.",
 
@@ -98,7 +109,7 @@ const diaChiDo = [
 
     lichsu:
       "Nhà bia được xây dựng nhằm tri ân những người đã hy sinh vì độc lập dân tộc.",
-
+    pdf: "/documents/DanhSachLietSiThaiTri.pdf",
     ynghia:
       "Địa điểm sinh hoạt truyền thống của Đoàn Thanh niên.",
 
