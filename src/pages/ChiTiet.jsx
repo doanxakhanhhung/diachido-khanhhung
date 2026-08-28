@@ -279,7 +279,7 @@ function ChiTiet() {
                     rel="noopener noreferrer"
                     className="document-button"
                   >
-                    📖 Ấn để xem danh sách
+                    📖 Ấn để xem danh sách!
                   </a>
 
 
@@ -320,7 +320,7 @@ function ChiTiet() {
                 {/* GOOGLE MAP */}
 
                 <h2>
-                  🗺 Vị trí
+                  🗺 Vị trí Bản đồ
                 </h2>
 
 
