@@ -20,6 +20,10 @@ import benPho4 from "../assets/images/ben-pho/4.jpg";
 import benPho5 from "../assets/images/ben-pho/5.jpg";
 import benPho6 from "../assets/images/ben-pho/6.jpg";
 import benPho7 from "../assets/images/ben-pho/7.jpg";
+import benPho8 from "../assets/images/ben-pho/8.jpg";
+import benPho9 from "../assets/images/ben-pho/9.jpg";
+import benPho10 from "../assets/images/ben-pho/10.jpg";
+import benPho11 from "../assets/images/ben-pho/11.jpg";
 
 import thaiTriBanner from "../assets/images/thai-tri/banner.jpg";
 import thaiTri1 from "../assets/images/thai-tri/1.jpg";
@@ -94,7 +98,11 @@ const diaChiDo = [
       benPho4,
       benPho5,
       benPho6,
-      benPho7
+      benPho7,
+      benPho8,
+      benPho9,
+      benPho10,
+      benPho11
     ]
   },
 
